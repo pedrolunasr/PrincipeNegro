@@ -115,7 +115,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -136,7 +136,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -157,7 +157,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -178,7 +178,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -199,7 +199,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,7 +220,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -241,7 +241,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -262,7 +262,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -283,7 +283,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -304,7 +304,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -325,7 +325,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -346,7 +346,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -367,7 +367,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -388,7 +388,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -409,7 +409,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -430,7 +430,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -451,7 +451,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -472,7 +472,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -493,7 +493,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -514,7 +514,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -535,7 +535,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -556,7 +556,7 @@ TextureImporter:
         width: 33
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -564,6 +564,405 @@ TextureImporter:
       bones: []
       spriteID: c93bcb51db3ca8b42a9db0edb316a35d
       internalID: -1080978552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 550
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.25, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e859fcdec5b1854cb9ba0b9dd4ec49e
+      internalID: -201401665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_27
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 550
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.25, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e32cf77a939534eb03401f61bd2f6f
+      internalID: -1362171928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_28
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 550
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.25, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02d0b98e0442b7140a9e5941d772d0bb
+      internalID: -1238821187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_29
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 550
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.25, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d00ff6055593d849a8e943c405e3951
+      internalID: -702240924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_31
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 550
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.25, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8bd5291ac9074c4db01928a28ac5f02
+      internalID: -1740560961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_33
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 550
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.25, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4767179391799f4a89747462e95ca8a
+      internalID: -776771049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 484
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.25, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff163719929c673478e9847c91361bf0
+      internalID: 927948168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_41
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 484
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.25, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7816a74242656c64e860fe9171cf75a5
+      internalID: 885374926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_43
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 484
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.25, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 246ddb88307b56c4b91700505cc6ff60
+      internalID: -2025739837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 418
+        width: 99
+        height: 66
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f90d2e5f327424190e19ff17b06787
+      internalID: 1672760027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_53
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 418
+        width: 99
+        height: 66
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee097eb8917bcd94b81c4414d9bae150
+      internalID: -1116122699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_55
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 418
+        width: 99
+        height: 66
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ac64d942068f14429987544ab648582
+      internalID: 1484970207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.25, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 214dd69172655a4429c51588b5eb8e5a
+      internalID: -690841416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_23
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 352
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.25, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f472767f7701b4182954014460d02c
+      internalID: 235751421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_24
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 352
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.25, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc1958a8d35801143969ef712f3f0d65
+      internalID: -433016249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_25
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 352
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.25, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86109e847b78520469a32681dda614bc
+      internalID: -1014142799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_30
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 352
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.25, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd0b06984b664084ebe470ee392d8442
+      internalID: -878746632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_32
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 352
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.25, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e276eff7732d394f88ffe3947d9429e
+      internalID: -1618399504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 286
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.25, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f3b66467a3ddf741b3ff11c028a1807
+      internalID: -1205531504
       vertices: []
       indices: 
       edges: []
@@ -579,28 +978,64 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Full-Character-PrincipeNegro_49: 1347489881
+      Full-Character-PrincipeNegro_34: -1205531504
+      Full-Character-PrincipeNegro_46: -1667136056
+      Full-Character-PrincipeNegro_36: 496276173
+      Full-Character-PrincipeNegro_57: -1079272995
+      Full-Character-PrincipeNegro_2: 1200278670
+      Full-Character-PrincipeNegro_23: 235751421
+      Full-Character-PrincipeNegro_50: 113674915
+      Full-Character-PrincipeNegro_42: 697856182
+      Full-Character-PrincipeNegro_5: -933570783
+      Full-Character-PrincipeNegro_27: -1362171928
+      Full-Character-PrincipeNegro_35: 1625593396
+      Full-Character-PrincipeNegro_53: -1116122699
+      Full-Character-PrincipeNegro_3: 1474746294
+      Full-Character-PrincipeNegro_14: 1650863751
+      Full-Character-PrincipeNegro_18: -4734290
+      Full-Character-PrincipeNegro_12: 706724903
+      Full-Character-PrincipeNegro_48: 869333826
+      Full-Character-PrincipeNegro_43: -2025739837
+      Full-Character-PrincipeNegro_0: -1767346495
       Full-Character-PrincipeNegro_16: -377489446
+      Full-Character-PrincipeNegro_56: -48428385
+      Full-Character-PrincipeNegro_52: -14951346
       Full-Character-PrincipeNegro_9: -631429899
+      Full-Character-PrincipeNegro_37: 650354766
+      Full-Character-PrincipeNegro_41: 885374926
+      Full-Character-PrincipeNegro_39: 927948168
       Full-Character-PrincipeNegro_10: 886379285
       Full-Character-PrincipeNegro_11: 206447279
-      Full-Character-PrincipeNegro_2: 1200278670
       Full-Character-PrincipeNegro_13: 806903947
       Full-Character-PrincipeNegro_21: -1080978552
+      Full-Character-PrincipeNegro_51: 1672760027
       Full-Character-PrincipeNegro_20: 176563065
       Full-Character-PrincipeNegro_4: 510882339
-      Full-Character-PrincipeNegro_5: -933570783
+      Full-Character-PrincipeNegro_55: 1484970207
+      Full-Character-PrincipeNegro_29: -702240924
+      Full-Character-PrincipeNegro_44: -461554197
+      Full-Character-PrincipeNegro_54: -1727210052
+      Full-Character-PrincipeNegro_31: -1740560961
+      Full-Character-PrincipeNegro_32: -1618399504
+      Full-Character-PrincipeNegro_24: -433016249
       Full-Character-PrincipeNegro_1: 702150084
-      Full-Character-PrincipeNegro_3: 1474746294
+      Full-Character-PrincipeNegro_25: -1014142799
       Full-Character-PrincipeNegro_7: 1276249436
-      Full-Character-PrincipeNegro_14: 1650863751
       Full-Character-PrincipeNegro_15: 1120147675
       Full-Character-PrincipeNegro_17: 1475833856
-      Full-Character-PrincipeNegro_8: -1786665980
-      Full-Character-PrincipeNegro_12: 706724903
-      Full-Character-PrincipeNegro_6: -92910910
+      Full-Character-PrincipeNegro_40: -1940927294
       Full-Character-PrincipeNegro_19: 2137124595
-      Full-Character-PrincipeNegro_18: -4734290
-      Full-Character-PrincipeNegro_0: -1767346495
+      Full-Character-PrincipeNegro_8: -1786665980
+      Full-Character-PrincipeNegro_26: -201401665
+      Full-Character-PrincipeNegro_6: -92910910
+      Full-Character-PrincipeNegro_33: -776771049
+      Full-Character-PrincipeNegro_38: 937762900
+      Full-Character-PrincipeNegro_30: -878746632
+      Full-Character-PrincipeNegro_47: -2091870086
+      Full-Character-PrincipeNegro_22: -690841416
+      Full-Character-PrincipeNegro_45: 1353326303
+      Full-Character-PrincipeNegro_28: -1238821187
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

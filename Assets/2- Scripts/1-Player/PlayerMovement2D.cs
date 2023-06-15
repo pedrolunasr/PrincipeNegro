@@ -6,7 +6,8 @@ using UnityEngine;
 public class PlayerMovement2D : MonoBehaviour
 
 {
-    private float move;
+    public static float move;
+
     [SerializeField] private float moveSpeed = 0f;
 
     [SerializeField] private bool jumping;
@@ -19,6 +20,8 @@ public class PlayerMovement2D : MonoBehaviour
     [SerializeField] private Vector2 sizeCapsule;
     [SerializeField] private float angleCapsule = 180;
     public LayerMask whatIsGround;
+
+    [SerializeField] private bool attackingBool;
 
     Rigidbody2D rb;
     SpriteRenderer sprite;
@@ -62,6 +65,30 @@ public class PlayerMovement2D : MonoBehaviour
         {
             jumping = true;
         }
+
+        //Input do ataque do personagem
+        if (Input.GetButtonDown("Fire3")){
+
+            attackingBool = true;
+
+            if (isGrounded)
+            {
+                animationPlayer.SetBool("SingleAttackGround", true);
+                animationPlayer.SetBool("AttackJump", false);
+            }
+            else
+            {
+                animationPlayer.SetBool("AttackJump", true);
+                animationPlayer.SetBool("SingleAttackGround", false);
+            }
+        }
+
+        if(attackingBool==true && isGrounded)
+        {
+            move = 0;
+
+        }
+
 
         //Inveter posição do personagem
         if (move < 0)
@@ -163,5 +190,13 @@ public class PlayerMovement2D : MonoBehaviour
             //Desativar o pulo
             jumping = false;
         }
+    }
+
+    void EndAnimationATK()
+    {
+        animationPlayer.SetBool("SingleAttackGround", false);
+        animationPlayer.SetBool("AttackJump", false);
+
+        attackingBool = false;
     }
 }
