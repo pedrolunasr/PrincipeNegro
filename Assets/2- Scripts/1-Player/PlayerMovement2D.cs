@@ -27,6 +27,8 @@ public class PlayerMovement2D : MonoBehaviour
     SpriteRenderer sprite;
     Animator animationPlayer;
 
+    public bool doubleAtk, lockAtk = false;
+
 
     void Start()
     {
@@ -67,7 +69,7 @@ public class PlayerMovement2D : MonoBehaviour
         }
 
         //Input do ataque do personagem
-        if (Input.GetButtonDown("Fire3")){
+        if (Input.GetButtonDown("Fire3") && lockAtk == false){
 
             attackingBool = true;
 
@@ -75,10 +77,20 @@ public class PlayerMovement2D : MonoBehaviour
             {
                 animationPlayer.SetBool("SingleAttackGround", true);
                 animationPlayer.SetBool("AttackJump", false);
+
+                animationPlayer.SetBool("DoubleAttack", false);
             }
             else
             {
                 animationPlayer.SetBool("AttackJump", true);
+                animationPlayer.SetBool("SingleAttackGround", false);
+
+                animationPlayer.SetBool("DoubleAttack", false);
+            }
+
+            if (doubleAtk == true)
+            {
+                animationPlayer.SetBool("DoubleAttack", true);
                 animationPlayer.SetBool("SingleAttackGround", false);
             }
         }
@@ -197,6 +209,13 @@ public class PlayerMovement2D : MonoBehaviour
         animationPlayer.SetBool("SingleAttackGround", false);
         animationPlayer.SetBool("AttackJump", false);
 
+        attackingBool = false;
+    }
+
+    void EndAnimationDoubleAtk()
+    {
+        animationPlayer.SetBool("DoubleAttack", false);
+        doubleAtk = false;
         attackingBool = false;
     }
 }
