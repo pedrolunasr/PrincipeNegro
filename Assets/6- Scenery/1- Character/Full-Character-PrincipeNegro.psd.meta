@@ -573,7 +573,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 550
+        y: 551
         width: 66
         height: 66
       alignment: 9
@@ -825,7 +825,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 352
+        y: 353
         width: 66
         height: 66
       alignment: 9
@@ -963,6 +963,321 @@ TextureImporter:
       bones: []
       spriteID: 8f3b66467a3ddf741b3ff11c028a1807
       internalID: -1205531504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 253
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30fac535159a2364a85da632ddcb1240
+      internalID: 1625593396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_36
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 253
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a02ec824ac940264fb197037124f3af4
+      internalID: 496276173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_37
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 253
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef480766a818a0e41978205cfdb62bc4
+      internalID: 650354766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_38
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 253
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 089a3718249e8f140b3c575a09c73a7b
+      internalID: 937762900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 187
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.75, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af685e22d78f2a42b0bbb24f056fd57
+      internalID: -1940927294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_42
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 188
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.75, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68ac902fce3ff234fa41d5fad7887c90
+      internalID: 697856182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_44
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 187
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.75, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a6ef8330f4b42d4bae87ba219d08efa
+      internalID: -461554197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_45
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 187
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.75, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ebd11ddd0594a549a8aa03e65335c42
+      internalID: 1353326303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_46
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 187
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.75, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1531ace8e691e0241b73aa8f2d076453
+      internalID: -1667136056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_47
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 188
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.75, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05f0e0a16730f7444854bcac25bf46b3
+      internalID: -2091870086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 121
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.75, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa76377705c14a34ab9e762b328572fc
+      internalID: 869333826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_49
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 121
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.75, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42fae1e50bc548b408b21489478784b6
+      internalID: 1347489881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_50
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 121
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.75, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73832fc4dd56ef3468cb9ceda7d0d105
+      internalID: 113674915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_52
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 121
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.75, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5089ced151d6d7d46ad3953d56e7f929
+      internalID: -14951346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Full-Character-PrincipeNegro_54
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 121
+        width: 66
+        height: 66
+      alignment: 9
+      pivot: {x: 0.75, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eada73cb65014ca499539a486c5c5186
+      internalID: -1727210052
       vertices: []
       indices: 
       edges: []

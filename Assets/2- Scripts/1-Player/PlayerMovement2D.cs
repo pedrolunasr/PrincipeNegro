@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerMovement2D : MonoBehaviour
 
 {
+    public static PlayerMovement2D pMove { get; private set; }
+
     public static float move;
 
     [SerializeField] private float moveSpeed = 0f;
@@ -29,6 +31,23 @@ public class PlayerMovement2D : MonoBehaviour
 
     public bool doubleAtk, lockAtk = false;
 
+    //Bloquear o Input do personagem
+    public static bool blockInput = false;
+
+    private void Awake()
+    {
+        if(pMove == null)
+        {
+            pMove = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
+
 
     void Start()
     {
@@ -45,140 +64,148 @@ public class PlayerMovement2D : MonoBehaviour
         //Reconhecer o chão
         isGrounded = Physics2D.OverlapCapsule(feetPosition.position, sizeCapsule, CapsuleDirection2D.Horizontal, angleCapsule, whatIsGround);
 
-        //Input de movimentação do personagem
-        move = Input.GetAxisRaw("Horizontal");
-
-        if (move != 0)
+        if (blockInput == false)
         {
-            moveSpeed += 15f * Time.deltaTime;
 
-            if (moveSpeed >= 3.0f)
+            //Input de movimentação do personagem
+            move = Input.GetAxisRaw("Horizontal");
+
+            if (move != 0)
             {
-                moveSpeed = 3.0f;
+                moveSpeed += 15f * Time.deltaTime;
+
+                if (moveSpeed >= 3.0f)
+                {
+                    moveSpeed = 3.0f;
+                }
             }
-        }
-        else
-        {
-            moveSpeed = 0;
-        }
+            else
+            {
+                moveSpeed = 0;
+            }
 
-        //Input do pulo do personagem
-        if (Input.GetButtonDown("Jump") && ghostJump > 0)
-        {
-            jumping = true;
-        }
+            //Input do pulo do personagem
+            if (Input.GetButtonDown("Jump") && ghostJump > 0)
+            {
+                jumping = true;
+            }
 
-        //Input do ataque do personagem
-        if (Input.GetButtonDown("Fire3") && lockAtk == false){
+            //Input do ataque do personagem
+            if (Input.GetButtonDown("Fire3") && lockAtk == false)
+            {
 
-            attackingBool = true;
+                attackingBool = true;
+
+                if (isGrounded)
+                {
+                    animationPlayer.SetBool("SingleAttackGround", true);
+                    animationPlayer.SetBool("AttackJump", false);
+
+                    animationPlayer.SetBool("DoubleAttack", false);
+                }
+                else
+                {
+                    animationPlayer.SetBool("AttackJump", true);
+                    animationPlayer.SetBool("SingleAttackGround", false);
+
+                    animationPlayer.SetBool("DoubleAttack", false);
+                }
+
+                if (doubleAtk == true)
+                {
+                    animationPlayer.SetBool("DoubleAttack", true);
+                    animationPlayer.SetBool("SingleAttackGround", false);
+                }
+            }
+
+            if (attackingBool == true && isGrounded)
+            {
+                move = 0;
+
+            }
+
+
+            //Inveter posição do personagem
+            if (move < 0)
+            {
+                sprite.flipX = true;
+            }
+            else if (move > 0)
+            {
+                sprite.flipX = false;
+            }
+
+
+            //Animação do personagem pulando, correndo e caindo
+
 
             if (isGrounded)
             {
-                animationPlayer.SetBool("SingleAttackGround", true);
-                animationPlayer.SetBool("AttackJump", false);
+                animationPlayer.SetBool("Jumping", false);
+                animationPlayer.SetBool("Falling", false);
 
-                animationPlayer.SetBool("DoubleAttack", false);
-            }
-            else
-            {
-                animationPlayer.SetBool("AttackJump", true);
-                animationPlayer.SetBool("SingleAttackGround", false);
-
-                animationPlayer.SetBool("DoubleAttack", false);
-            }
-
-            if (doubleAtk == true)
-            {
-                animationPlayer.SetBool("DoubleAttack", true);
-                animationPlayer.SetBool("SingleAttackGround", false);
-            }
-        }
-
-        if(attackingBool==true && isGrounded)
-        {
-            move = 0;
-
-        }
-
-
-        //Inveter posição do personagem
-        if (move < 0)
-        {
-            sprite.flipX = true;
-        }else if(move >0){
-            sprite.flipX = false;
-        }
-
-
-        //Animação do personagem pulando, correndo e caindo
-
-
-        if (isGrounded){
-            animationPlayer.SetBool("Jumping", false);
-            animationPlayer.SetBool("Falling", false);
-
-            if (rb.velocity.x != 0 && move != 0)
-            {
-                animationPlayer.SetBool("Walking", true);
-            }
-            else
-            {
-                animationPlayer.SetBool("Walking", false);
-            }
-        }
-        else
-        {
-            if(rb.velocity.x == 0)
-            {
-                animationPlayer.SetBool("Walking", false);
-
-                if(rb.velocity.y > 0)
+                if (rb.velocity.x != 0 && move != 0)
                 {
-                    animationPlayer.SetBool("Jumping", true);
-                    animationPlayer.SetBool("Falling", false);
+                    animationPlayer.SetBool("Walking", true);
                 }
-                if(rb.velocity.y < 0)
+                else
                 {
-                    animationPlayer.SetBool("Jumping", false);
-                    animationPlayer.SetBool("Falling", true);
+                    animationPlayer.SetBool("Walking", false);
                 }
             }
             else
             {
-                if (rb.velocity.y > 0)
+                if (rb.velocity.x == 0)
                 {
-                    animationPlayer.SetBool("Jumping", true);
-                    animationPlayer.SetBool("Falling", false);
+                    animationPlayer.SetBool("Walking", false);
+
+                    if (rb.velocity.y > 0)
+                    {
+                        animationPlayer.SetBool("Jumping", true);
+                        animationPlayer.SetBool("Falling", false);
+                    }
+                    if (rb.velocity.y < 0)
+                    {
+                        animationPlayer.SetBool("Jumping", false);
+                        animationPlayer.SetBool("Falling", true);
+                    }
                 }
-                if (rb.velocity.y < 0)
+                else
                 {
-                    animationPlayer.SetBool("Jumping", false);
-                    animationPlayer.SetBool("Falling", true);
+                    if (rb.velocity.y > 0)
+                    {
+                        animationPlayer.SetBool("Jumping", true);
+                        animationPlayer.SetBool("Falling", false);
+                    }
+                    if (rb.velocity.y < 0)
+                    {
+                        animationPlayer.SetBool("Jumping", false);
+                        animationPlayer.SetBool("Falling", true);
+                    }
                 }
             }
-        }
+        
 
 
-        //Código do pulando e caindo
+            //Código do pulando e caindo
 
-        if (isGrounded)
-        {
-
-            ghostJump = 0.05f;
-
-        }
-        else
-        {
-            ghostJump -= Time.deltaTime;
-
-            if (ghostJump <= 0)
+            if (isGrounded)
             {
-                ghostJump = 0;
+
+                ghostJump = 0.05f;
+
             }
+            else
+            {
+                ghostJump -= Time.deltaTime;
 
+                if (ghostJump <= 0)
+                {
+                    ghostJump = 0;
+                }
+
+            }
         }
-
     }
 
     void OnDrawGizmosSelected()
@@ -218,4 +245,35 @@ public class PlayerMovement2D : MonoBehaviour
         doubleAtk = false;
         attackingBool = false;
     }
+
+    //Personagem levando dano
+
+    public IEnumerator DamagePlayer()
+    {
+        animationPlayer.SetBool("Damage", true);
+        sprite.color = new Color(1f, 0, 0, 1f);
+        yield return new WaitForSeconds(0.2f);
+        sprite.color = new Color(1f, 1f, 1f, 1f);
+        animationPlayer.SetBool("Damage", false);
+
+        for (int i=0; i< 7; i++)
+        {
+            sprite.enabled = false;
+            yield return new WaitForSeconds(0.15f);
+            sprite.enabled = true;
+            yield return new WaitForSeconds(0.15f);
+        }
+
+        PlayerLife.bc.enabled = true;
+    }
+
+    public void PlayerDead()
+    {
+        animationPlayer.SetBool("Dead", true);
+        blockInput = true;
+        moveSpeed = 0;
+
+        PlayerLife.bc.enabled = false;
+    }
+
 }
