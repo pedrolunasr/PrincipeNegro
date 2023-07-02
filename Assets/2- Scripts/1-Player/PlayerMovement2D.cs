@@ -231,6 +231,15 @@ public class PlayerMovement2D : MonoBehaviour
         }
     }
 
+    public void PlayerDead()
+    {
+        animationPlayer.SetBool("Dead", true);
+        blockInput = true;
+        moveSpeed = 0;
+
+        PlayerLife.bc.enabled = false;
+    }
+
     void EndAnimationATK()
     {
         animationPlayer.SetBool("SingleAttackGround", false);
@@ -265,15 +274,6 @@ public class PlayerMovement2D : MonoBehaviour
         }
 
         PlayerLife.bc.enabled = true;
-    }
-
-    public void PlayerDead()
-    {
-        animationPlayer.SetBool("Dead", true);
-        blockInput = true;
-        moveSpeed = 0;
-
-        PlayerLife.bc.enabled = false;
     }
 
 }

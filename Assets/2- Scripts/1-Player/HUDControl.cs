@@ -15,6 +15,10 @@ public class HUDControl : MonoBehaviour
     public int life = 3;
     public GameObject[] heartHUD = new GameObject[3];
 
+    void Start()
+    {
+        pMove = PlayerMovement2D.pMove;
+    }
 
     private void Awake()
     {

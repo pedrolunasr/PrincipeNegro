@@ -23,7 +23,6 @@ public class PlayerLife : MonoBehaviour
         if (collision.gameObject.tag == "Damage01")
         {
             hControl.LessLife();
-            //Control.Damage();
             bc.enabled = false;
 
             if (hControl.life > 0)
