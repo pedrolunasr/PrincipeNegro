@@ -6,15 +6,16 @@ TagManager:
   tags:
   - Damage01
   - MoreLife01
+  - Attack
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Ground
-  - 
+  - Enemy
   - 
   - 
   - 
