@@ -263,8 +263,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -203.28584, y: 15.000278}
-  m_SizeDelta: {x: 280.92, y: 234.92}
+  m_AnchoredPosition: {x: -177.29254, y: 15.000278}
+  m_SizeDelta: {x: 332.9066, y: 234.92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &352608753
 MonoBehaviour:
@@ -288,7 +288,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9796cc3dbb8027e4587399edf255ac71, type: 3}
-    m_FontSize: 25
+    m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -299,7 +299,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Programador/Sprites\r\nProgramador\r\n\r\nGame Designer\r\nGame Designer\r"
+  m_Text: "Programador/Game Developer\nProgramador\r\nGame Designer\r/Developer\n\r\nGame
+    Designer\r\nGame Designer\r"
 --- !u!222 &352608754
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -411,8 +412,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 149.83, y: 15.000278}
-  m_SizeDelta: {x: 425.32, y: 234.92}
+  m_AnchoredPosition: {x: 175.83, y: 15.000278}
+  m_SizeDelta: {x: 373.33, y: 234.92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1206927113
 MonoBehaviour:
@@ -436,7 +437,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9796cc3dbb8027e4587399edf255ac71, type: 3}
-    m_FontSize: 25
+    m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -447,8 +448,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Reydner Miranda Nunes\r\nIan Moraes Eduardo\r\n\r\nPedro Luna Souto Rodrigues\r\nThiago
-    Baroni Peres\r"
+  m_Text: "Reydner Miranda Nunes\r\nIan Moraes Eduardo\r\nThiago Silva\n\r\nPedro
+    Luna Souto Rodrigues\r\nThiago Baroni Peres\r"
 --- !u!222 &1206927114
 CanvasRenderer:
   m_ObjectHideFlags: 0
