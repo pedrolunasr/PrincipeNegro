@@ -61,11 +61,11 @@ public class LoadScene : MonoBehaviour
 
     public void Level01()
     {
-        SceneManager.LoadScene("Level01");
+        SceneManager.LoadScene("Level-01");
     }
 
     public void Level02()
     {
-        SceneManager.LoadScene("Level02");
+        SceneManager.LoadScene("Level-02");
     }
 }

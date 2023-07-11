@@ -115,7 +115,7 @@ TextureImporter:
         width: 51
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 2, y: 2, z: 2, w: 2}
       outline: []
       physicsShape: []
@@ -123,6 +123,132 @@ TextureImporter:
       bones: []
       spriteID: d96b6454f37af4f4bb1eed4a65b5ac23
       internalID: 40606311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Botoes_1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 263
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 1, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54ce376ee8054984f8c9adb675b0fa2c
+      internalID: 654545547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Botoes_2
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 271
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b1dbcaa5606e664da28c06327fa9d92
+      internalID: -722554949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Botoes_3
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 294
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a82840a76abe8734baf50271fcd733c9
+      internalID: 849664188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Botoes_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 232
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ee9d38c61531de4db5fb2150e6380fd
+      internalID: 72159602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Botoes_5
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 232
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecbaeada79dc4eb448830bd779c99cc4
+      internalID: 856497474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Botoes_6
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 232
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1000a4fa46db9d74ab63b786722f17af
+      internalID: -298439804
       vertices: []
       indices: 
       edges: []
@@ -138,7 +264,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Botoes_5: 856497474
+      Botoes_3: 849664188
+      Botoes_2: -722554949
+      Botoes_6: -298439804
       Botoes_0: 40606311
+      Botoes_4: 72159602
+      Botoes_1: -617793464
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
