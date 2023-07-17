@@ -36,19 +36,21 @@ public class LoadScene : MonoBehaviour
         Application.Quit();
     }
 
+    //LEVEL COMPLETED/INCOMPLETED OR PAUSE GAME
+
     public void PauseGame()
     {
         Time.timeScale = 0f;
     }
 
-    public void Continue()
+    public void ResumeGame()
     {
         Time.timeScale = 1f;
     }
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Level-01");
     }
 
     public void ExitGame()

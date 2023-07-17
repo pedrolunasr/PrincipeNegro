@@ -199,7 +199,7 @@ TextureImporter:
         width: 31
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,7 +220,7 @@ TextureImporter:
         width: 31
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -241,7 +241,7 @@ TextureImporter:
         width: 31
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -249,6 +249,48 @@ TextureImporter:
       bones: []
       spriteID: 1000a4fa46db9d74ab63b786722f17af
       internalID: -298439804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Botoes_7
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 102
+        width: 132
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 10, y: 10, z: 10, w: 9}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9985177b0949a045aaf392d466fce38
+      internalID: 1818095556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Botoes_8
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 186
+        width: 80
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 10, y: 10, z: 10, w: 9}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f025d87b5c2e076459ea16d619091c50
+      internalID: -694487666
       vertices: []
       indices: 
       edges: []
@@ -269,7 +311,9 @@ TextureImporter:
       Botoes_2: -722554949
       Botoes_6: -298439804
       Botoes_0: 40606311
+      Botoes_8: -694487666
       Botoes_4: 72159602
+      Botoes_7: 1818095556
       Botoes_1: -617793464
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
