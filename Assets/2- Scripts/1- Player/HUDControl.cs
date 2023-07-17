@@ -40,6 +40,13 @@ public class HUDControl : MonoBehaviour
         LifeHud();
     }
 
+    public void EndOfLife()
+    {
+        life = 0;
+        LifeHud();
+        
+    }
+
     public void MoreLife()
     {
         life++;
@@ -52,11 +59,11 @@ public class HUDControl : MonoBehaviour
     }
 
 
-    //Aqui é a troca de imagme da HUD dependendo da quantidade de vida do player
+    //Aqui ï¿½ a troca de imagme da HUD dependendo da quantidade de vida do player
     public void LifeHud()
     {
 
-        //Limitar a vida que o player perde ou adquirir ao limite de corações que possui, n ocaso 3
+        //Limitar a vida que o player perde ou adquirir ao limite de coraï¿½ï¿½es que possui, n ocaso 3
         if (life <= 0)
         {
             life = 0;
@@ -91,7 +98,7 @@ public class HUDControl : MonoBehaviour
                 heartHUD[1].SetActive(false);
                 heartHUD[2].SetActive(false);
 
-                pMove.PlayerDead(); // Chama essa funçao responsavel por matar o persoangem
+                pMove.PlayerDead(); // Chama essa funï¿½ao responsavel por matar o persoangem
 
                 break;
         }

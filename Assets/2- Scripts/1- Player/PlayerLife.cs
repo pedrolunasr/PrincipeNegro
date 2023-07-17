@@ -57,6 +57,16 @@ public class PlayerLife : MonoBehaviour
 
         }
 
+        if( coll.CompareTag("sea") ){
+
+            hControl.EndOfLife();
+            if (hControl.life > 0)
+            {
+                StartCoroutine(pMove.DamagePlayer());
+            }
+
+        }
+
     }
 
     private void OnCollisionEnter2D( Collision2D collision )

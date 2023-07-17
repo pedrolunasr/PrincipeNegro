@@ -12,7 +12,7 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        initialPosition = target.position.y + 1.3f;
+        initialPosition = target.position.y + 1.2f;
         
     }
 
