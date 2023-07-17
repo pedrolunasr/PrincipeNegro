@@ -23,7 +23,7 @@ public class PlayerLife : MonoBehaviour
         if (collision.gameObject.tag == "Damage01")
         {
             hControl.LessLife();
-            bc.enabled = false;
+            bc.enabled = true;
 
             if (hControl.life > 0)
             {
@@ -42,4 +42,26 @@ public class PlayerLife : MonoBehaviour
 
         }
     }
+
+    void ManageCollision( GameObject coll )
+    {
+
+        if( coll.CompareTag("Damage01") ){
+
+            hControl.LessLife();
+            if (hControl.life > 0)
+            {
+                StartCoroutine(pMove.DamagePlayer());
+            }
+
+
+        }
+
+    }
+
+    private void OnCollisionEnter2D( Collision2D collision )
+    {
+        ManageCollision( collision.gameObject );
+    }
+
 }
