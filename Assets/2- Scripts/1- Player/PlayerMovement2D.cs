@@ -1,4 +1,3 @@
-using Mono.Cecil;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -32,7 +31,6 @@ public class PlayerMovement2D : MonoBehaviour
     Animator animationPlayer;
 
     private bool isPaused;
-    private bool isPausedToDeath;
 
 
     [Header("Pause System")]
@@ -91,7 +89,7 @@ public class PlayerMovement2D : MonoBehaviour
             contadorDeath = contadorDeath + Time.deltaTime;
             Debug.Log(contadorDeath);
 
-            if(contadorDeath >= 1.5f)
+            if(contadorDeath >= 1.8f)
             {
                 PauseDeath();
             }
@@ -352,8 +350,6 @@ public class PlayerMovement2D : MonoBehaviour
         void PauseDeath()
     {
 
-
-            isPausedToDeath = true;
             Time.timeScale = 0f;
             deathPanel.SetActive(true);
 
