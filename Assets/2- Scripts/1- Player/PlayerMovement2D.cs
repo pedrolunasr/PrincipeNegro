@@ -1,7 +1,9 @@
+using Mono.Cecil;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement2D : MonoBehaviour
 
@@ -29,6 +31,20 @@ public class PlayerMovement2D : MonoBehaviour
     SpriteRenderer sprite;
     Animator animationPlayer;
 
+    private bool isPaused;
+    private bool isPausedToDeath;
+
+
+    [Header("Pause System")]
+    public GameObject pausePanel;
+
+    [Header("Death System")]
+    public GameObject deathPanel;
+
+
+    float contadorDeath; //tempo ate mostrar tela de morte
+
+
     public bool doubleAtk, lockAtk = false;
 
     //Bloquear o Input do personagem
@@ -45,12 +61,20 @@ public class PlayerMovement2D : MonoBehaviour
             Destroy(gameObject);
         }
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
 
     void Start()
     {
+        //Tirar cursor do mouse da tela
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+
+        Time.timeScale = 1f;
+
+
+
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         animationPlayer = GetComponent<Animator>();
@@ -60,6 +84,28 @@ public class PlayerMovement2D : MonoBehaviour
 
     void Update()
     {
+
+        //Contador Tempo apos morte (condicao que o blockinput esteja ligado, tomar cuidado)
+        if (blockInput == true)
+        {
+            contadorDeath = contadorDeath + Time.deltaTime;
+            Debug.Log(contadorDeath);
+
+            if(contadorDeath >= 1.5f)
+            {
+                PauseDeath();
+            }
+
+
+
+        }
+
+        //Pausar jogo
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseScreen();
+        }
+
 
         //Reconhecer o chão
         isGrounded = Physics2D.OverlapCapsule(feetPosition.position, sizeCapsule, CapsuleDirection2D.Horizontal, angleCapsule, whatIsGround);
@@ -238,6 +284,7 @@ public class PlayerMovement2D : MonoBehaviour
         moveSpeed = 0;
 
         PlayerLife.bc.enabled = false;
+
     }
 
     void EndAnimationATK()
@@ -275,5 +322,46 @@ public class PlayerMovement2D : MonoBehaviour
 
         PlayerLife.bc.enabled = true;
     }
+
+    void PauseScreen()
+    {
+        if (isPaused)
+        {
+            isPaused = false;
+            Time.timeScale = 1f;
+            pausePanel.SetActive(false);
+            //Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false;
+        }
+        else
+        {
+            isPaused = true;
+            Time.timeScale = 0f;
+            pausePanel.SetActive(true);
+            //Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = true;
+        }
+    }
+
+
+    public IEnumerator DeathPlayerTime()
+    {
+        yield return new WaitForSeconds(0.2f);
+    }
+
+        void PauseDeath()
+    {
+
+
+            isPausedToDeath = true;
+            Time.timeScale = 0f;
+            deathPanel.SetActive(true);
+
+            blockInput = false;
+            moveSpeed = 3.0f;
+
+            PlayerLife.bc.enabled = true;
+    }
+
 
 }

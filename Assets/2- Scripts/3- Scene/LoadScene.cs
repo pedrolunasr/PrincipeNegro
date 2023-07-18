@@ -50,7 +50,7 @@ public class LoadScene : MonoBehaviour
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene("Level-01");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ExitGame()
