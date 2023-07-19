@@ -10,7 +10,7 @@ public class SimpleWarriorAttack : MonoBehaviour
     public SpriteRenderer sprite;
     public Material[] materialSprite;
 
-    private int life = 5;
+    private int life = 3;
     public float moveSpeed = 1f;
 
     public Transform[] pointsToMove;
@@ -100,7 +100,14 @@ public class SimpleWarriorAttack : MonoBehaviour
 
         if(AttackCheckSimpleWarrior.checkAttack == true)
         {
-            StartCoroutine("Attack");
+            if (Vector3.Distance(transform.position, player.transform.position) < 2.5f)
+            {
+                if (Vector3.Distance(transform.position, player.transform.position) > 0.8f)
+                {
+                    StartCoroutine("Attack");
+                }
+            }
+            
         }
     }
 

@@ -8,6 +8,7 @@ TagManager:
   - MoreLife01
   - Attack
   - sea
+  - Body
   layers:
   - Default
   - TransparentFX

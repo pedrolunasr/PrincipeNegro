@@ -31,7 +31,7 @@ public class PlayerLife : MonoBehaviour
             }
 
         }
-
+        
 
 
         //ganhar vida
@@ -43,12 +43,15 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
+
+    /*
     void ManageCollision( GameObject coll )
     {
 
         if( coll.CompareTag("Damage01") ){
 
             hControl.LessLife();
+            
             if (hControl.life > 0)
             {
                 StartCoroutine(pMove.DamagePlayer());
@@ -60,6 +63,7 @@ public class PlayerLife : MonoBehaviour
         if( coll.CompareTag("sea") ){
 
             hControl.EndOfLife();
+            
             if (hControl.life > 0)
             {
                 StartCoroutine(pMove.DamagePlayer());
@@ -73,5 +77,7 @@ public class PlayerLife : MonoBehaviour
     {
         ManageCollision( collision.gameObject );
     }
+
+    */
 
 }

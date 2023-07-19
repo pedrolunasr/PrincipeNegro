@@ -42,8 +42,8 @@ public class PlayerMovement2D : MonoBehaviour
 
     float contadorDeath; //tempo ate mostrar tela de morte
 
-
-    public bool doubleAtk, lockAtk = false;
+    //ataque duplo
+    //public bool doubleAtk, lockAtk = false;
 
     //Bloquear o Input do personagem
     public static bool blockInput = false;
@@ -134,9 +134,13 @@ public class PlayerMovement2D : MonoBehaviour
                 jumping = true;
             }
 
-            //Input do ataque do personagem
-            if (Input.GetButtonDown("Fire3") && lockAtk == false)
-            {
+            //Input do ataque do personagem3
+
+            // ataque duplo
+            //if (Input.GetButtonDown("Fire3") && lockAtk == false)
+            if (Input.GetButtonDown("Fire3"))
+
+                {
 
                 attackingBool = true;
 
@@ -155,11 +159,13 @@ public class PlayerMovement2D : MonoBehaviour
                     animationPlayer.SetBool("DoubleAttack", false);
                 }
 
+                /*   //ataque duplo
                 if (doubleAtk == true)
                 {
                     animationPlayer.SetBool("DoubleAttack", true);
                     animationPlayer.SetBool("SingleAttackGround", false);
                 }
+                */
             }
 
             if (attackingBool == true && isGrounded)
@@ -293,17 +299,23 @@ public class PlayerMovement2D : MonoBehaviour
         attackingBool = false;
     }
 
+
+    //ataque duplo
+    /*
     void EndAnimationDoubleAtk()
     {
         animationPlayer.SetBool("DoubleAttack", false);
         doubleAtk = false;
         attackingBool = false;
     }
+    */
 
     //Personagem levando dano
 
     public IEnumerator DamagePlayer()
     {
+
+        PlayerLife.bc.enabled = false;
         animationPlayer.SetBool("Damage", true);
         sprite.color = new Color(1f, 0, 0, 1f);
         yield return new WaitForSeconds(0.2f);
