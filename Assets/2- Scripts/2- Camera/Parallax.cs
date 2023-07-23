@@ -4,33 +4,44 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
-
     public GameObject cameraPlayer;
-    private float length, startPos;
     public float speedParallax;
+
+    private Transform[] layers;
+    private float[] startPos;
+    private float[] length;
 
     void Start()
     {
-        startPos = transform.position.x;
-        length = GetComponent<SpriteRenderer>().bounds.size.x;
-        
+        layers = new Transform[transform.childCount];
+        startPos = new float[transform.childCount];
+        length = new float[transform.childCount];
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            layers[i] = transform.GetChild(i);
+            startPos[i] = layers[i].position.x;
+            length[i] = layers[i].GetComponent<SpriteRenderer>().bounds.size.x;
+        }
     }
 
     void FixedUpdate()
     {
-        float temp = (cameraPlayer.transform.position.x * (1 - speedParallax));
-        float dist = (cameraPlayer.transform.position.x * speedParallax);
-
-        transform.position = new Vector3(startPos + dist, transform.position.y, transform.position.z);
-
-        if (temp > startPos + length)
+        for (int i = 0; i < layers.Length; i++)
         {
-            startPos += length;
-        }
+            float temp = (cameraPlayer.transform.position.x * (1 - speedParallax));
+            float dist = (cameraPlayer.transform.position.x * speedParallax);
 
-        else if(temp < startPos - length)
-        {
-            startPos -= length;
+            layers[i].position = new Vector3(startPos[i] + dist, layers[i].position.y, layers[i].position.z);
+
+            if (temp > startPos[i] + length[i])
+            {
+                startPos[i] += length[i];
+            }
+            else if (temp < startPos[i] - length[i])
+            {
+                startPos[i] -= length[i];
+            }
         }
     }
 }
