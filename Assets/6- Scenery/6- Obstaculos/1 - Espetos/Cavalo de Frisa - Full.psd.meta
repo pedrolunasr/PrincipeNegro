@@ -115,7 +115,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -136,7 +136,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -157,7 +157,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -165,6 +165,27 @@ TextureImporter:
       bones: []
       spriteID: 3596257a972e65945acd2cf52aa4775e
       internalID: -142315627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cavalo de Frisa - Full_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940504ed1cfa4c64883e51e949ae3709
+      internalID: -1934463384
       vertices: []
       indices: 
       edges: []
@@ -183,6 +204,7 @@ TextureImporter:
       Cavalo de Frisa - Full_0: 1935145060
       Cavalo de Frisa - Full_1: 303381029
       Cavalo de Frisa - Full_2: -142315627
+      Cavalo de Frisa - Full_3: -1934463384
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
