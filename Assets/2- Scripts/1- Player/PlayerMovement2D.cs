@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.U2D.IK;
+using static UnityEngine.ParticleSystem;
 
 public class PlayerMovement2D : MonoBehaviour
 
@@ -48,6 +50,21 @@ public class PlayerMovement2D : MonoBehaviour
     //Bloquear o Input do personagem
     public static bool blockInput = false;
 
+
+    // tomar dano e ir pra tras
+    public float KBForce;
+    public float KBCounter;
+    public float KBTotalTime;
+
+    public bool KnockFromRight;
+
+    public GameObject ImpactEffect;
+    private Animator AnimDamage;
+
+    public ParticleSystem dust;
+
+
+
     private void Awake()
     {
         if(pMove == null)
@@ -68,6 +85,8 @@ public class PlayerMovement2D : MonoBehaviour
         //Tirar cursor do mouse da tela
         //Cursor.lockState = CursorLockMode.Locked;
         //Cursor.visible = false;
+
+        AnimDamage = GetComponentInChildren<Animator>();
 
         Time.timeScale = 1f;
 
@@ -102,7 +121,9 @@ public class PlayerMovement2D : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseScreen();
+
         }
+
 
 
         //Reconhecer o chão
@@ -179,10 +200,12 @@ public class PlayerMovement2D : MonoBehaviour
             if (move < 0)
             {
                 sprite.flipX = true;
+                
             }
             else if (move > 0)
             {
                 sprite.flipX = false;
+
             }
 
 
@@ -201,6 +224,7 @@ public class PlayerMovement2D : MonoBehaviour
                 else
                 {
                     animationPlayer.SetBool("Walking", false);
+
                 }
             }
             else
@@ -267,13 +291,33 @@ public class PlayerMovement2D : MonoBehaviour
     void FixedUpdate()
 
     {
-        //Movimentação do personagem
-        rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
+        //Tomar knockback ao levar dano
+        if(KBCounter <= 0)
+        {
+            //Movimentação do personagem
+            rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
+        }
+        else
+        {
+            if(KnockFromRight == true)
+            {
+                rb.velocity = new Vector2(-KBForce, KBForce);
+            }
+            if (KnockFromRight == false)
+            {
+                rb.velocity = new Vector2(KBForce, KBForce);
+            }
+
+            KBCounter -= Time.deltaTime;
+        }
+
 
         //Pulo do personagem
         if (jumping)
         {
             rb.velocity = Vector2.up * jumpSpeed;
+            CreateDust();
+
             //rb.AddForce(new Vector2(0f, jumpSpeed), ForceMode2D.Impulse);
 
             //Desativar o pulo
@@ -284,10 +328,17 @@ public class PlayerMovement2D : MonoBehaviour
     public void PlayerDead()
     {
         animationPlayer.SetBool("Dead", true);
+        Instantiate(ImpactEffect, transform.position, Quaternion.identity);
         blockInput = true;
         moveSpeed = 0;
 
         PlayerLife.bc.enabled = false;
+
+        //deixar por enquanto
+        Destroy(transform.gameObject.GetComponent<BoxCollider2D>());
+        //Destroy(transform.gameObject.GetComponent<Rigidbody2D>());
+        
+        
 
     }
 
@@ -315,14 +366,19 @@ public class PlayerMovement2D : MonoBehaviour
     public IEnumerator DamagePlayer()
     {
 
+
+
         PlayerLife.bc.enabled = false;
         animationPlayer.SetBool("Damage", true);
+
+        Instantiate(ImpactEffect, transform.position, Quaternion.identity);
+
         sprite.color = new Color(1f, 0, 0, 1f);
         yield return new WaitForSeconds(0.2f);
         sprite.color = new Color(1f, 1f, 1f, 1f);
         animationPlayer.SetBool("Damage", false);
 
-        for (int i=0; i< 7; i++)
+        for (int i=0; i< 4; i++)
         {
             sprite.enabled = false;
             yield return new WaitForSeconds(0.15f);
@@ -371,5 +427,9 @@ public class PlayerMovement2D : MonoBehaviour
             PlayerLife.bc.enabled = true;
     }
 
+    void CreateDust()
+    {
+        dust.Play();
+    }
 
 }

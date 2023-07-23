@@ -32,7 +32,17 @@ public class PlayerLife : MonoBehaviour
 
         }
         
+        if (collision.gameObject.tag == "instaKill")
+        {
+            hControl.instaKill();
+            bc.enabled = true;
 
+            if (hControl.life > 0)
+            {
+                StartCoroutine(pMove.DamagePlayer());
+            }
+
+        }
 
         //ganhar vida
         if (collision.gameObject.tag == "MoreLife01")

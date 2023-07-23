@@ -1077,7 +1077,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 66
-        y: 188
+        y: 187
         width: 66
         height: 66
       alignment: 9
@@ -1161,7 +1161,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 330
-        y: 188
+        y: 187
         width: 66
         height: 66
       alignment: 9
@@ -1293,7 +1293,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Full-Character-PrincipeNegro_45: 1353326303
+      Full-Character-PrincipeNegro_49: 1347489881
       Full-Character-PrincipeNegro_34: -1205531504
       Full-Character-PrincipeNegro_46: -1667136056
       Full-Character-PrincipeNegro_36: 496276173
@@ -1348,8 +1348,8 @@ TextureImporter:
       Full-Character-PrincipeNegro_38: 937762900
       Full-Character-PrincipeNegro_30: -878746632
       Full-Character-PrincipeNegro_47: -2091870086
-      Full-Character-PrincipeNegro_49: 1347489881
       Full-Character-PrincipeNegro_22: -690841416
+      Full-Character-PrincipeNegro_45: 1353326303
       Full-Character-PrincipeNegro_28: -1238821187
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

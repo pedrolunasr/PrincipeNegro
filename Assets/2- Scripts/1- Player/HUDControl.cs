@@ -40,6 +40,11 @@ public class HUDControl : MonoBehaviour
         LifeHud();
     }
 
+    public void instaKill()
+    {
+        life = 0;
+        LifeHud();
+    }
     public void EndOfLife()
     {
         life = 0;
