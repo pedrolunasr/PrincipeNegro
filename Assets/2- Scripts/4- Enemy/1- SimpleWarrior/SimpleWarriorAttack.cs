@@ -61,7 +61,9 @@ public class SimpleWarriorAttack : MonoBehaviour
             }
         }else
         {
+            print(pointsToMove.Length);
             transform.position = Vector2.MoveTowards(transform.position, pointsToMove[2].transform.position, moveSpeed * Time.deltaTime);
+           
 
             if ( gameObject.transform.position.x > pointsToMove[2].position.x)
             {

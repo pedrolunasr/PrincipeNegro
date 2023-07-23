@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class PlayerLife : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PlayerLife : MonoBehaviour
     PlayerMovement2D pMove;
 
     public static BoxCollider2D bc;
+
+    public GameObject ImpactEffect;
 
     void Start()
     {
@@ -22,18 +25,29 @@ public class PlayerLife : MonoBehaviour
     {
         if (collision.gameObject.tag == "Damage01")
         {
+            //Instantiate(ImpactEffect, transform.position, Quaternion.identity);
             hControl.LessLife();
             bc.enabled = true;
 
             if (hControl.life > 0)
             {
                 StartCoroutine(pMove.DamagePlayer());
+
             }
+            else if(hControl.life <= 0)
+            {
+                Destroy(this);
+            }
+
+            ImpactEffectDamagePlayer();
+
+
 
         }
         
         if (collision.gameObject.tag == "instaKill")
         {
+            
             hControl.instaKill();
             bc.enabled = true;
 
@@ -41,6 +55,9 @@ public class PlayerLife : MonoBehaviour
             {
                 StartCoroutine(pMove.DamagePlayer());
             }
+
+            ImpactEffectDamagePlayer();
+            Destroy(this);
 
         }
 
@@ -51,6 +68,14 @@ public class PlayerLife : MonoBehaviour
             //Control.Damage();
 
         }
+    }
+
+    private void ImpactEffectDamagePlayer()
+    {
+
+        Instantiate(ImpactEffect, transform.position, Quaternion.identity);
+        Destroy(ImpactEffect);
+
     }
 
 

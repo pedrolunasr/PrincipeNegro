@@ -15,6 +15,7 @@ public class HUDControl : MonoBehaviour
     public int life = 3;
     public GameObject[] heartHUD = new GameObject[3];
 
+
     void Start()
     {
         pMove = PlayerMovement2D.pMove;
@@ -36,13 +37,23 @@ public class HUDControl : MonoBehaviour
 
     public void LessLife()
     {
+        
         life--;
+        if(life < 0)
+        {
+            life = 0;
+        }
         LifeHud();
     }
 
     public void instaKill()
     {
-        life = 0;
+        //life = 0;
+        
+        while(life > 0)
+        {
+            LessLife();
+        }
         LifeHud();
     }
     public void EndOfLife()
@@ -98,14 +109,14 @@ public class HUDControl : MonoBehaviour
                 heartHUD[2].SetActive(false);
                 break;
 
-            default:
+            case 0:
                 heartHUD[0].SetActive(false);
                 heartHUD[1].SetActive(false);
                 heartHUD[2].SetActive(false);
 
                 pMove.PlayerDead(); // Chama essa fun�ao responsavel por matar o persoangem
-
                 break;
+
         }
     }
 

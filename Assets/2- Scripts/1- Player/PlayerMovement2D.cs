@@ -58,7 +58,6 @@ public class PlayerMovement2D : MonoBehaviour
 
     public bool KnockFromRight;
 
-    public GameObject ImpactEffect;
     private Animator AnimDamage;
 
     public ParticleSystem dust;
@@ -328,7 +327,6 @@ public class PlayerMovement2D : MonoBehaviour
     public void PlayerDead()
     {
         animationPlayer.SetBool("Dead", true);
-        Instantiate(ImpactEffect, transform.position, Quaternion.identity);
         blockInput = true;
         moveSpeed = 0;
 
@@ -371,8 +369,6 @@ public class PlayerMovement2D : MonoBehaviour
         PlayerLife.bc.enabled = false;
         animationPlayer.SetBool("Damage", true);
 
-        Instantiate(ImpactEffect, transform.position, Quaternion.identity);
-
         sprite.color = new Color(1f, 0, 0, 1f);
         yield return new WaitForSeconds(0.2f);
         sprite.color = new Color(1f, 1f, 1f, 1f);
@@ -393,17 +389,19 @@ public class PlayerMovement2D : MonoBehaviour
     {
         if (isPaused)
         {
-            isPaused = false;
+            
             Time.timeScale = 1f;
             pausePanel.SetActive(false);
+            isPaused = false;
             //Cursor.lockState = CursorLockMode.Locked;
             //Cursor.visible = false;
         }
         else
         {
-            isPaused = true;
+            
             Time.timeScale = 0f;
             pausePanel.SetActive(true);
+            isPaused = true;
             //Cursor.lockState = CursorLockMode.None;
             //Cursor.visible = true;
         }

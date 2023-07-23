@@ -8372,6 +8372,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 382716238}
+--- !u!114 &361721157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361721148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a46263d5afcfad4b975e6f10a0e84c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  anim: {fileID: 0}
+  sprite: {fileID: 0}
+  materialSprite: []
+  moveSpeed: 1
+  pointsToMove: []
+  startingPoint: 0
+  colliderAtk: {fileID: 0}
+  colliderCheckAtk: {fileID: 0}
 --- !u!1 &377251765
 GameObject:
   m_ObjectHideFlags: 0
@@ -8567,7 +8588,6 @@ MonoBehaviour:
   KBCounter: 0
   KBTotalTime: 0.2
   KnockFromRight: 0
-  ImpactEffect: {fileID: 5079179273932399559, guid: b4d45e7f27a834940a5509f7600e5710, type: 3}
   dust: {fileID: 1770400079}
 --- !u!95 &382716239
 Animator:
@@ -8649,7 +8669,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382716234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.46, y: 6.9, z: 0}
+  m_LocalPosition: {x: 10.77, y: 6.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27454,6 +27474,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2494182132148334805, guid: 002d03aca33738a4c9b65779a22cff3f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 361721154}
+    - targetCorrespondingSourceObject: {fileID: 2494182132148334805, guid: 002d03aca33738a4c9b65779a22cff3f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 361721157}
   m_SourcePrefab: {fileID: 100100000, guid: 002d03aca33738a4c9b65779a22cff3f, type: 3}
 --- !u!1 &1902842127
 GameObject:
@@ -55379,6 +55402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a40e228a3f7447f4c957274b88ad3499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ImpactEffect: {fileID: 5079179273932399559, guid: b4d45e7f27a834940a5509f7600e5710, type: 3}
 --- !u!61 &2124420676
 BoxCollider2D:
   m_ObjectHideFlags: 0
