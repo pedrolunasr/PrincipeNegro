@@ -8,19 +8,11 @@ public class AttackCheckSimpleWarrior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject subObject = collision.transform.Find("Body").gameObject;
-        if (collision.gameObject.tag == "Player" && subObject.tag == "Body")
 
+        if (collision.gameObject.tag == "Player")
         {
-            BoxCollider2D collider = subObject.GetComponent<BoxCollider2D>();
-            if (collider.enabled)
-            {
                 checkAttack = true;
-            }
-            else
-            {
-                checkAttack = false;
-            }
+  
         }
 
     }

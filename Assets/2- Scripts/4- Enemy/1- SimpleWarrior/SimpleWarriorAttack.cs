@@ -61,7 +61,6 @@ public class SimpleWarriorAttack : MonoBehaviour
             }
         }else
         {
-            print(pointsToMove.Length);
             transform.position = Vector2.MoveTowards(transform.position, pointsToMove[2].transform.position, moveSpeed * Time.deltaTime);
            
 
@@ -102,9 +101,9 @@ public class SimpleWarriorAttack : MonoBehaviour
 
         if(AttackCheckSimpleWarrior.checkAttack == true)
         {
-            if (Vector3.Distance(transform.position, player.transform.position) < 2.5f)
+            if (Vector3.Distance(transform.position, player.transform.position) < 3.5f)
             {
-                if (Vector3.Distance(transform.position, player.transform.position) > 0.8f)
+                if (Vector3.Distance(transform.position, player.transform.position) > 0f)
                 {
                     StartCoroutine("Attack");
                 }
