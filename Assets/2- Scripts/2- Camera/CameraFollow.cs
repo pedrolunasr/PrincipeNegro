@@ -12,14 +12,13 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        initialPosition = target.position.y + 1.2f;
         
     }
 
 
     void FixedUpdate()
     {
-        Vector3 startPosition = new Vector3(target.position.x, initialPosition, -1f);
+        Vector3 startPosition = new Vector3(target.position.x, target.position.y + 0.45f, -1f);
         Vector3 smoothPosition = Vector3.Lerp(transform.position, startPosition, smoothSpeed);
         transform.position = smoothPosition;
     }

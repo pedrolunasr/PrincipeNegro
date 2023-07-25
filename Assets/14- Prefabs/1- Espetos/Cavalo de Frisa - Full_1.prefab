@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1333835614016803958}
   - component: {fileID: 1333835614016803959}
   - component: {fileID: 1333835614016803952}
-  - component: {fileID: 1333835614016803953}
-  m_Layer: 0
+  - component: {fileID: 3814540293142333542}
+  m_Layer: 6
   m_Name: Cavalo de Frisa - Full_1
   m_TagString: Damage01
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.15, y: -0.55}
@@ -145,8 +145,8 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.84}
   m_EdgeRadius: 0
---- !u!61 &1333835614016803953
-BoxCollider2D:
+--- !u!68 &3814540293142333542
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -174,19 +174,17 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.15, y: -0.55}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 2, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.65, y: 0.9}
+  m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.05106595, y: -0.991005}
+  - {x: -0.38746572, y: -0.18673599}
+  - {x: 0.13044086, y: -0.21975917}
+  - {x: 0.66108483, y: -0.99529517}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

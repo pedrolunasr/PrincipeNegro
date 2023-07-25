@@ -125,13 +125,13 @@ public class PlayerMovement2D : MonoBehaviour
 
 
 
-        //Reconhecer o chão
+        //Reconhecer o chï¿½o
         isGrounded = Physics2D.OverlapCapsule(feetPosition.position, sizeCapsule, CapsuleDirection2D.Horizontal, angleCapsule, whatIsGround);
 
         if (blockInput == false)
         {
 
-            //Input de movimentação do personagem
+            //Input de movimentaï¿½ï¿½o do personagem
             move = Input.GetAxisRaw("Horizontal");
 
             if (move != 0)
@@ -195,7 +195,7 @@ public class PlayerMovement2D : MonoBehaviour
             }
 
 
-            //Inveter posição do personagem
+            //Inveter posiï¿½ï¿½o do personagem
             if (move < 0)
             {
                 sprite.flipX = true;
@@ -208,7 +208,7 @@ public class PlayerMovement2D : MonoBehaviour
             }
 
 
-            //Animação do personagem pulando, correndo e caindo
+            //Animaï¿½ï¿½o do personagem pulando, correndo e caindo
 
 
             if (isGrounded)
@@ -260,7 +260,7 @@ public class PlayerMovement2D : MonoBehaviour
         
 
 
-            //Código do pulando e caindo
+            //Cï¿½digo do pulando e caindo
 
             if (isGrounded)
             {
@@ -293,7 +293,7 @@ public class PlayerMovement2D : MonoBehaviour
         //Tomar knockback ao levar dano
         if(KBCounter <= 0)
         {
-            //Movimentação do personagem
+            //Movimentaï¿½ï¿½o do personagem
             rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
         }
         else
@@ -326,8 +326,11 @@ public class PlayerMovement2D : MonoBehaviour
 
     public void PlayerDead()
     {
-        animationPlayer.SetBool("Dead", true);
         blockInput = true;
+        
+        animationPlayer.SetBool("SingleAttackGround", false);
+        animationPlayer.SetBool("AttackJump", false);
+        animationPlayer.SetBool("Dead", true);
         moveSpeed = 0;
 
         PlayerLife.bc.enabled = false;
@@ -336,7 +339,7 @@ public class PlayerMovement2D : MonoBehaviour
         Destroy(transform.gameObject.GetComponent<BoxCollider2D>());
         //Destroy(transform.gameObject.GetComponent<Rigidbody2D>());
         
-        
+        //Destroy(this);
 
     }
 
