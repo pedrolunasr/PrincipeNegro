@@ -6,14 +6,23 @@ using UnityEngine.SceneManagement;
 public class LoadScene : MonoBehaviour
 {
 
+    public void Intro()
+    {
+        MusicManager.mManager.PlaySound(0);
+        SceneManager.LoadScene("Menu");
+        
+    }
+
     public void MenuScene()
     {
         SceneManager.LoadScene("Menu");
+        MusicManager.mManager.PlaySound(1);
     }
 
     public void Credits()
     {
         SceneManager.LoadScene("Credits");
+        MusicManager.mManager.PlaySound(9);
     }
 
     public void InstagramMarks()
@@ -24,11 +33,13 @@ public class LoadScene : MonoBehaviour
     public void Options()
     {
         SceneManager.LoadScene("Options");
+        MusicManager.mManager.PlaySound(1);
     }
 
     public void SelectLevels()
     {
         SceneManager.LoadScene("SelectLevels");
+        MusicManager.mManager.PlaySound(1);
     }
 
     public void QuitGame()
@@ -56,6 +67,8 @@ public class LoadScene : MonoBehaviour
     public void ExitGame()
     {
         SceneManager.LoadScene("Menu");
+        MusicManager.mManager.PlaySound(1);
+        
     }
 
 
@@ -63,7 +76,9 @@ public class LoadScene : MonoBehaviour
 
     public void Level01()
     {
+        MusicManager.mManager.PlaySound(2);
         SceneManager.LoadScene("Level-01");
+        
     }
 
     public void Level02()
