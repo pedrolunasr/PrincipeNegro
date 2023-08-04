@@ -18,9 +18,10 @@ public class BallTrap : MonoBehaviour
         cc2d = GetComponent<CapsuleCollider2D>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             StartCoroutine(ActiveTrap());
         }
@@ -29,8 +30,7 @@ public class BallTrap : MonoBehaviour
     IEnumerator ActiveTrap()
     {
         rb2dBall.bodyType = RigidbodyType2D.Dynamic;
-
-        rb2d.bodyType = RigidbodyType2D.Dynamic;
+        Destroy(cc2d);
 
         yield return new WaitForSeconds(0.1f);
         ball.gameObject.tag = "instaKill";
@@ -44,5 +44,6 @@ public class BallTrap : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Destroy(ball.gameObject);
         Destroy(this);
+   
     }
 }
