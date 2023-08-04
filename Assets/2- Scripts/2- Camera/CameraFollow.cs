@@ -41,10 +41,7 @@ public class CameraFollow : MonoBehaviour
             targetYPos = playerYPos;
         }
 
-        // Atualizar a posição vertical alvo da câmera de acordo com as condições especificadas
-        float maxHeight = initialPosition + maxCameraHeightOffset;
-        float halfScreenHeight = Camera.main.orthographicSize;
-        targetYPos = Mathf.Clamp(targetYPos, initialPosition, target.position.y + halfScreenHeight);
+        
 
         // Calcular a posição alvo da câmera com base no jogador e na posição vertical alvo
         Vector3 targetPosition = new Vector3(target.position.x, targetYPos, -1f);

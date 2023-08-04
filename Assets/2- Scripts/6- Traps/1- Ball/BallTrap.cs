@@ -37,7 +37,7 @@ public class BallTrap : MonoBehaviour
 
         gameObject.layer = LayerMask.NameToLayer("TriggerPlayer");
 
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(4f);
         ball.gameObject.tag = "Untagged";
         
 
