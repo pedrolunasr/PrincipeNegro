@@ -7,7 +7,6 @@ using UnityEngine.U2D.IK;
 using static UnityEngine.ParticleSystem;
 
 public class PlayerMovement2D : MonoBehaviour
-
 {
     public static PlayerMovement2D pMove { get; private set; }
 
@@ -15,12 +14,12 @@ public class PlayerMovement2D : MonoBehaviour
 
     [SerializeField] private float moveSpeed = 0f;
 
-    [SerializeField] private bool jumping;
+    [SerializeField] public bool jumping;
     [SerializeField] private float jumpSpeed = 4.8f;
 
     [SerializeField] private float ghostJump;
 
-    [SerializeField] private bool isGrounded;
+    [SerializeField] public bool isGrounded;
     public Transform feetPosition;
     [SerializeField] private Vector2 sizeCapsule;
     [SerializeField] private float angleCapsule = 180;

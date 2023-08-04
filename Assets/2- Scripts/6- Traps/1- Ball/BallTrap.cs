@@ -39,10 +39,10 @@ public class BallTrap : MonoBehaviour
 
         yield return new WaitForSeconds(6f);
         ball.gameObject.tag = "Untagged";
+        
 
         yield return new WaitForSeconds(2f);
-        Destroy(cc2d);
-        Destroy(rb2d);
+        Destroy(ball.gameObject);
         Destroy(this);
     }
 }
