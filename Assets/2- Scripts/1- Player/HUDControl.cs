@@ -65,8 +65,12 @@ public class HUDControl : MonoBehaviour
 
     public void MoreLife()
     {
-        life++;
-        LifeHud();
+        
+        if( life < 3 ){
+            life++;
+            LifeHud();
+        }
+        
     }
 
     public int Life()

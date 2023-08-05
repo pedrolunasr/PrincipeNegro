@@ -19,11 +19,12 @@ public class SimpleWarriorAttack : MonoBehaviour
     public BoxCollider2D colliderAtk;
     public BoxCollider2D colliderCheckAtk;
 
-    
+    private HUDControl hControl;
+
     void Start()
     {
         player = GameObject.Find("Player");
-
+        hControl = HUDControl.hControl;
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
 
@@ -155,7 +156,7 @@ public class SimpleWarriorAttack : MonoBehaviour
         anim.SetTrigger("Attack");
         moveSpeed = 0;
 
-        yield return new WaitForSeconds(1.5f); //Velocidade de ataque/recuperação
+        yield return new WaitForSeconds(1.5f); //Velocidade de ataque/recuperaï¿½ï¿½o
 
         moveSpeed = 1.2f;
         colliderCheckAtk.enabled = true;
@@ -175,6 +176,7 @@ public class SimpleWarriorAttack : MonoBehaviour
             {
                 StopAllCoroutines();
                 EnemyDead();
+                hControl.MoreLife();
             }
         }
     }
