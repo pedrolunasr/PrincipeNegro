@@ -7,7 +7,6 @@ public class CameraFollow : MonoBehaviour
     PlayerMovement2D pMove;
     public Transform target;
     public float smoothSpeed = 0.5f;
-    public float maxCameraHeightOffset = 0.1f; // Limite máximo de altura da câmera em relação à posição inicial do jogador
     public bool followXFromStart = true; // Define se a câmera deve seguir o jogador no eixo X desde o início
 
     private float initialPosition; // Variável para armazenar a posição inicial do jogador no eixo Y
@@ -16,7 +15,7 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        initialPosition = target.position.y + 2.5f; // Armazena a posição inicial do jogador no eixo Y
+        initialPosition = target.position.y + 4f; // Armazena a posição inicial do jogador no eixo Y
 
         if (followXFromStart)
         {
@@ -33,7 +32,7 @@ public class CameraFollow : MonoBehaviour
     void FixedUpdate()
     {
         // Verificar a posição vertical atual do jogador
-        float playerYPos = target.position.y;
+        float playerYPos = target.position.y + 1f;
 
         // Ajustar a posição vertical alvo da câmera apenas quando o jogador estiver subindo
         if (playerYPos != targetYPos && !pMove.jumping && pMove.isGrounded)
