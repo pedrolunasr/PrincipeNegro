@@ -33,6 +33,8 @@ public class PlayerMovement2D : MonoBehaviour
 
     private bool isPaused;
 
+    private GameMaster gm;
+
 
     [Header("Pause System")]
     public GameObject pausePanel;
@@ -95,6 +97,14 @@ public class PlayerMovement2D : MonoBehaviour
         animationPlayer = GetComponent<Animator>();
 
         sizeCapsule = new Vector2(0.325f, 0.01f);
+
+
+        //Referente ao mecanismo de checkpoint e GameMaster
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+        transform.position = gm.lastCheckPointPos;
+
+
+
     }
 
     void Update()
@@ -329,7 +339,12 @@ public class PlayerMovement2D : MonoBehaviour
         
         animationPlayer.SetBool("SingleAttackGround", false);
         animationPlayer.SetBool("AttackJump", false);
+        animationPlayer.SetBool("DoubleAttack", false);
+        animationPlayer.SetBool("Jumping", false);
+        animationPlayer.SetBool("Falling", false);
+        animationPlayer.SetBool("Walking", false);
         animationPlayer.SetBool("Dead", true);
+
         moveSpeed = 0;
 
         PlayerLife.bc.enabled = false;
@@ -337,8 +352,9 @@ public class PlayerMovement2D : MonoBehaviour
         //deixar por enquanto
         Destroy(transform.gameObject.GetComponent<BoxCollider2D>());
         //Destroy(transform.gameObject.GetComponent<Rigidbody2D>());
-        
+
         //Destroy(this);
+
 
     }
 

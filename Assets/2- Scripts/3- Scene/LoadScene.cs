@@ -25,11 +25,6 @@ public class LoadScene : MonoBehaviour
         MusicManager.mManager.PlaySound(9);
     }
 
-    public void InstagramMarks()
-    {
-        Application.OpenURL("https://www.instagram.com/reydner_/");
-    }
-
     public void Options()
     {
         SceneManager.LoadScene("Options");
@@ -61,7 +56,8 @@ public class LoadScene : MonoBehaviour
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //chama o checkpoint
     }
 
     public void ExitGame()
@@ -81,8 +77,5 @@ public class LoadScene : MonoBehaviour
         
     }
 
-    public void Level02()
-    {
-        SceneManager.LoadScene("Level-02");
-    }
+
 }

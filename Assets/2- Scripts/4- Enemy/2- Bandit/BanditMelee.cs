@@ -8,7 +8,7 @@ public class BanditMelee : MonoBehaviour
     public Animator anim;
     public SpriteRenderer sprite;
 
-    private int life = 2;
+    private int life = 1;
     public float moveSpeed = 1f;
 
     public Transform[] pointsToMove;
@@ -16,6 +16,8 @@ public class BanditMelee : MonoBehaviour
 
     public BoxCollider2D colliderAtk;
     public BoxCollider2D colliderCheckAtk;
+
+    public GameObject activeItem;
 
     void Start()
     {
@@ -90,6 +92,8 @@ public class BanditMelee : MonoBehaviour
         Destroy(colliderAtk);
         Destroy(colliderCheckAtk);
         Destroy(this);
+
+        activeItem.SetActive(true);
     }
     
     IEnumerator Attack()

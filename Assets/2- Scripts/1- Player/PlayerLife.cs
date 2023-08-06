@@ -62,11 +62,13 @@ public class PlayerLife : MonoBehaviour
         }
 
         //ganhar vida
-        if (collision.gameObject.tag == "MoreLife01")
+        if (collision.gameObject.tag == "Health")
         {
-            hControl.MoreLife();
-            //Control.Damage();
-
+            if(hControl.life < 3)
+            {
+                hControl.MoreLife();
+                Destroy(collision.gameObject);
+            }
         }
     }
 

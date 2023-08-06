@@ -1078,7 +1078,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 3.5
-    functionName: MenuScene
+    functionName: Level01
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

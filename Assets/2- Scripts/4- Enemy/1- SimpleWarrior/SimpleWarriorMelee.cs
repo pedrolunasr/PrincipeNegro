@@ -85,6 +85,9 @@ public class SimpleWarriorMelee : MonoBehaviour
     {
         life = 0;
         anim.SetTrigger("Dead");
+        anim.SetBool("Walking", false);
+        anim.SetBool("Attack", false);
+
         moveSpeed = 0;
         Destroy(transform.gameObject.GetComponent<BoxCollider2D>());
         Destroy(transform.gameObject.GetComponent<Rigidbody2D>());
