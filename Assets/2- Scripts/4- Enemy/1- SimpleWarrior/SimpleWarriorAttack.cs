@@ -10,7 +10,7 @@ public class SimpleWarriorAttack : MonoBehaviour
     public SpriteRenderer sprite;
     public Material[] materialSprite;
 
-    private int life = 3;
+    public int life = 3;
     public float moveSpeed = 1f;
 
     public Transform[] pointsToMove;
@@ -18,6 +18,8 @@ public class SimpleWarriorAttack : MonoBehaviour
 
     public BoxCollider2D colliderAtk;
     public BoxCollider2D colliderCheckAtk;
+
+    public BoxCollider2D bc2d;
 
     private HUDControl hControl;
 
@@ -29,6 +31,8 @@ public class SimpleWarriorAttack : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
 
         transform.position = pointsToMove[2].transform.position;
+
+        bc2d = GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -132,19 +136,23 @@ public class SimpleWarriorAttack : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
+
     }
 
     private void EnemyDead()
     {
-        
+        anim.SetTrigger("Dead");
+        anim.SetBool("Walking", false);
         life = 0;
         sprite.material = materialSprite[1];
-        anim.SetTrigger("Dead");
         moveSpeed = 0;
         Destroy(transform.gameObject.GetComponent<BoxCollider2D>());
         Destroy(transform.gameObject.GetComponent<Rigidbody2D>());
         Destroy(colliderAtk);
         Destroy(colliderCheckAtk);
+        Destroy(pointsToMove[0]);
+        Destroy(pointsToMove[1]);
+        Destroy(pointsToMove[2]);
         Destroy(this);
     }
 
@@ -161,19 +169,21 @@ public class SimpleWarriorAttack : MonoBehaviour
         moveSpeed = 1.2f;
         colliderCheckAtk.enabled = true;
     }
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Attack")
         {
             life--;
 
-            if( life > 0)
+            if ( life > 0)
             {
                 StartCoroutine("EnemyDamage");
+
             }
-            else
+            else if (life <= 0)
             {
+                anim.SetBool("Walking", false);
                 StopAllCoroutines();
                 EnemyDead();
                 hControl.MoreLife();

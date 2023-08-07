@@ -72,8 +72,8 @@ public class LoadScene : MonoBehaviour
 
     public void Level01()
     {
-        MusicManager.mManager.PlaySound(2);
         SceneManager.LoadScene("Level-01");
+        MusicManager.mManager.PlaySound(2);
         
     }
 

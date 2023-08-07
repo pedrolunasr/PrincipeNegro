@@ -33,7 +33,10 @@ public class PlayerMovement2D : MonoBehaviour
 
     private bool isPaused;
 
+
     private GameMaster gm;
+    CheckPoint history;
+    private bool historyActive;
 
 
     [Header("Pause System")]
@@ -41,6 +44,9 @@ public class PlayerMovement2D : MonoBehaviour
 
     [Header("Death System")]
     public GameObject deathPanel;
+
+    [Header("Pause System")]
+    public GameObject pauseHistory;
 
 
     float contadorDeath; //tempo ate mostrar tela de morte
@@ -103,7 +109,7 @@ public class PlayerMovement2D : MonoBehaviour
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         transform.position = gm.lastCheckPointPos;
 
-
+        history = CheckPoint.history;
 
     }
 
@@ -121,14 +127,15 @@ public class PlayerMovement2D : MonoBehaviour
                 PauseDeath();
             }
 
-
-
         }
 
         //Pausar jogo
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseScreen();
+            if (historyActive == false)
+            {
+                PauseScreen();
+            }
 
         }
 
@@ -424,6 +431,24 @@ public class PlayerMovement2D : MonoBehaviour
             //Cursor.visible = true;
         }
     }
+
+    public void PauseHistory()
+    {
+
+        Time.timeScale = 0f;
+        pauseHistory.SetActive(true);
+        historyActive = true;
+
+
+
+    }
+
+    public void HistoryActive()
+    {
+        historyActive = false;
+    }
+
+
 
 
     public IEnumerator DeathPlayerTime()

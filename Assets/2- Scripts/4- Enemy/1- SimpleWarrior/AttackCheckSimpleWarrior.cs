@@ -11,9 +11,18 @@ public class AttackCheckSimpleWarrior : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-                checkAttack = true;
-  
+            checkAttack = true;
+            StartCoroutine(ResetCheckAttack());
+
+
         }
+
+    }
+
+    private IEnumerator ResetCheckAttack()
+    {
+        yield return new WaitForSeconds(5f);
+        checkAttack = false;
 
     }
 }
