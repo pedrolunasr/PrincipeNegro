@@ -24,7 +24,7 @@ public class ColliderTimeStopOnTrigger : MonoBehaviour
                 playerMovement.KnockFromRight = false;
             }
 
-            collision.gameObject.GetComponent<TimeStopOnDamage>().StopTime(0.05f, 10, 0.1f);
+            collision.gameObject.GetComponent<TimeStopOnDamage>().StopTime(0.05f, 10, 0f);
         }
 
     }

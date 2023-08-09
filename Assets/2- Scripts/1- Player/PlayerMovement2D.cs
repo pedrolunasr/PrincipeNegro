@@ -393,6 +393,8 @@ public class PlayerMovement2D : MonoBehaviour
 
         PlayerLife.bc.enabled = false;
         animationPlayer.SetBool("Damage", true);
+        animationPlayer.SetBool("SingleAttackGround", false);
+        animationPlayer.SetBool("AttackJump", false);
 
         sprite.color = new Color(1f, 0, 0, 1f);
         yield return new WaitForSeconds(0.2f);
@@ -406,7 +408,7 @@ public class PlayerMovement2D : MonoBehaviour
             sprite.enabled = true;
             yield return new WaitForSeconds(0.15f);
         }
-
+            
         PlayerLife.bc.enabled = true;
     }
 

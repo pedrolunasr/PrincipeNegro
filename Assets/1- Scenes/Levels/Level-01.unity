@@ -14276,7 +14276,7 @@ MonoBehaviour:
   pausePanel: {fileID: 266347002}
   deathPanel: {fileID: 63102884}
   pauseHistory: {fileID: 2001020330}
-  KBForce: 3
+  KBForce: 1
   KBCounter: 0
   KBTotalTime: 0.2
   KnockFromRight: 0
