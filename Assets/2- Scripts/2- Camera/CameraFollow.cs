@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,9 +6,9 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     PlayerMovement2D pMove;
-    public Transform target;
-    public float smoothSpeed = 0.5f;
-    public bool followXFromStart = true; // Define se a câmera deve seguir o jogador no eixo X desde o início
+    private Transform target;
+    public float smoothSpeed = 1f;
+    public bool followXFromStart = false; // Define se a câmera deve seguir o jogador no eixo X desde o início
 
     private float initialPosition; // Variável para armazenar a posição inicial do jogador no eixo Y
     private float targetYPos; // Variável para armazenar a posição vertical alvo da câmera

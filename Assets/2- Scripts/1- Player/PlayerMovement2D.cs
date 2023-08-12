@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.U2D.IK;
@@ -358,10 +359,8 @@ public class PlayerMovement2D : MonoBehaviour
 
         //deixar por enquanto
         Destroy(transform.gameObject.GetComponent<BoxCollider2D>());
-        //Destroy(transform.gameObject.GetComponent<Rigidbody2D>());
 
         //Destroy(this);
-
 
     }
 
@@ -385,11 +384,8 @@ public class PlayerMovement2D : MonoBehaviour
     */
 
     //Personagem levando dano
-
     public IEnumerator DamagePlayer()
     {
-
-
 
         PlayerLife.bc.enabled = false;
         animationPlayer.SetBool("Damage", true);
@@ -437,11 +433,9 @@ public class PlayerMovement2D : MonoBehaviour
     public void PauseHistory()
     {
 
-        Time.timeScale = 0f;
-        pauseHistory.SetActive(true);
-        historyActive = true;
-
-
+        //Time.timeScale = 0f;
+        //pauseHistory.SetActive(true);
+        //historyActive = true;
 
     }
 
@@ -450,24 +444,21 @@ public class PlayerMovement2D : MonoBehaviour
         historyActive = false;
     }
 
-
-
-
     public IEnumerator DeathPlayerTime()
     {
         yield return new WaitForSeconds(0.2f);
     }
 
-        void PauseDeath()
+    void PauseDeath()
     {
 
-            Time.timeScale = 0f;
-            deathPanel.SetActive(true);
+        Time.timeScale = 0f;
+        deathPanel.SetActive(true);
 
-            blockInput = false;
-            moveSpeed = 3.0f;
+        blockInput = false;
+        moveSpeed = 3.0f;
 
-            PlayerLife.bc.enabled = true;
+        PlayerLife.bc.enabled = true;
     }
 
     void CreateDust()

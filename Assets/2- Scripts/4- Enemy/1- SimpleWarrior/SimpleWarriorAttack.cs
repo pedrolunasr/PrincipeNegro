@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SimpleWarriorAttack : MonoBehaviour
@@ -29,10 +31,17 @@ public class SimpleWarriorAttack : MonoBehaviour
         hControl = HUDControl.hControl;
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-
-        transform.position = pointsToMove[2].transform.position;
-
         bc2d = GetComponent<BoxCollider2D>();
+
+    }
+
+    private void Awake()
+    {
+        if (pointsToMove != null && pointsToMove.Length >= 3 )
+        {
+            transform.position = pointsToMove[2].transform.position;
+        }
+        
     }
 
     void Update()
@@ -66,17 +75,23 @@ public class SimpleWarriorAttack : MonoBehaviour
             }
         }else
         {
-            transform.position = Vector2.MoveTowards(transform.position, pointsToMove[2].transform.position, moveSpeed * Time.deltaTime);
-           
+            if ( pointsToMove != null && pointsToMove.Length >= 3 )
+            {
 
-            if ( gameObject.transform.position.x > pointsToMove[2].position.x)
-            {
-                sprite.flipX = true;
+                transform.position = Vector2.MoveTowards(transform.position, pointsToMove[2].transform.position, moveSpeed * Time.deltaTime);
+
+
+                if (gameObject.transform.position.x > pointsToMove[2].position.x)
+                {
+                    sprite.flipX = true;
+                }
+                if (gameObject.transform.position.x < pointsToMove[2].position.x)
+                {
+                    sprite.flipX = false;
+                }
+
             }
-            if (gameObject.transform.position.x < pointsToMove[2].position.x)
-            {
-                sprite.flipX = false;
-            }
+            
         }
 
         if(sprite.flipX == true)
