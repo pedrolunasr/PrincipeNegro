@@ -11,7 +11,7 @@ namespace Platformer.Gameplay
     /// Fired when a Player collides with an Enemy.
     /// </summary>
     /// <typeparam name="EnemyCollision"></typeparam>
-    public class PlayerEnemyCollision : Simulation.Event<PlayerEnemyCollision>
+    public class PlayerEnemyAttack : Simulation.Event<PlayerEnemyAttack>
     {
         public EnemyController enemy;
         public PlayerController player;

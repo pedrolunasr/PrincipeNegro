@@ -1,4 +1,6 @@
-﻿using Platformer.Core;
+﻿using System.Collections;
+using System.Collections.Generic;
+using Platformer.Core;
 using Platformer.Mechanics;
 using UnityEngine;
 
@@ -10,28 +12,34 @@ namespace Platformer.Gameplay
     /// <typeparam name="EnemyAttack"></typeparam>
     public class EnemyAttack : Simulation.Event<EnemyAttack>
     {
-        public EnemyController enemy;
+        public SimpleWarriorController enemy;
 
         public override void Execute()
         {
-            enemy._collider.enabled = false;
-            enemy.control.enabled = false;
 
+            //_coroutineRunner.StartCoroutine("Attack");
+            enemy.StartCoroutine(Attack());
+
+        }
+
+        IEnumerator Attack()
+        {
+           
             AttackCheckSimpleWarrior.checkAttack = false;
+            enemy.colliderCheckAttack.enabled = false;
+            enemy.colliderAttack.enabled = true;
+            enemy.animator.SetTrigger("Attack");
+            enemy.moveSpeed = 0;
 
-            enemy._animator.SetTrigger("Attack");
-            //moveSpeed = 0;
-
-            //yield return new WaitForSeconds(1.5f); //Velocidade de ataque/recupera��o
-
-            //moveSpeed = 1.2f;
-            //colliderCheckAtk.enabled = true;
-
-            enemy._collider.enabled = true;
-            enemy.control.enabled = true;
-
+            yield return new WaitForSeconds(1.5f); //Velocidade de ataque/recuperaço
+            
+            enemy.moveSpeed = 1.2f;
+            enemy.colliderCheckAttack.enabled = true;
+            enemy.colliderAttack.enabled = false;
             if (enemy._audio && enemy.ouch)
                 enemy._audio.PlayOneShot(enemy.ouch);
+
         }
+
     }
 }

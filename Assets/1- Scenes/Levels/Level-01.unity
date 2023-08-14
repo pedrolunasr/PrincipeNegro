@@ -13065,6 +13065,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.555
       objectReference: {fileID: 0}
+    - target: {fileID: 5261800380111438243, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
+      propertyPath: m_Name
+      value: Point02SimpleWarrior
+      objectReference: {fileID: 0}
     - target: {fileID: 5261800380111438268, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -13077,9 +13081,13 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5261800380364966523, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
+      propertyPath: m_Name
+      value: Point01SimpleWarrior
+      objectReference: {fileID: 0}
     - target: {fileID: 5261800380400546636, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
       propertyPath: m_Name
-      value: SimpleWarrior-Full
+      value: SimpleWarrior
       objectReference: {fileID: 0}
     - target: {fileID: 5261800380400546637, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
       propertyPath: m_RootOrder
@@ -13125,12 +13133,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5261800380703972544, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
+      propertyPath: m_Name
+      value: AttackSimpleWarrior
+      objectReference: {fileID: 0}
+    - target: {fileID: 5261800380879333910, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
+      propertyPath: m_Name
+      value: Point0SimpleWarrior
+      objectReference: {fileID: 0}
     - target: {fileID: 5261800380879333911, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.62
       objectReference: {fileID: 0}
     - target: {fileID: 5261800380879333911, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
       propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5261800380946609326, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
+      propertyPath: m_Name
+      value: CheckAttackSimpleWarrior
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331509359662059623, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7739305477346240266, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
@@ -13143,9 +13167,13 @@ PrefabInstance:
       objectReference: {fileID: 382716238}
     m_RemovedComponents:
     - {fileID: 8256873228965265576, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
+    - {fileID: 5331509359662059623, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5261800378948513227, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1741385940}
   m_SourcePrefab: {fileID: 100100000, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
 --- !u!1 &294118339
 GameObject:
@@ -19596,10 +19624,20 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0895a3fd2209a245a6ea021cc918b25, type: 3}
+--- !u!4 &765235131 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5261800380111438268, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
+  m_PrefabInstance: {fileID: 270817707}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &783617359 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6775722781418105493, guid: d0895a3fd2209a245a6ea021cc918b25, type: 3}
   m_PrefabInstance: {fileID: 1994239203}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &787739437 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5261800380703972546, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
+  m_PrefabInstance: {fileID: 270817707}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &804294693
 GameObject:
@@ -20221,6 +20259,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &898605006 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5261800380364966516, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
+  m_PrefabInstance: {fileID: 270817707}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &915224526 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 841703753589075025, guid: 190fb416e3ee01548b82fa14af280170, type: 3}
@@ -23378,6 +23421,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1362760638 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5261800380879333911, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
+  m_PrefabInstance: {fileID: 270817707}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1414280739
 GameObject:
   m_ObjectHideFlags: 0
@@ -26389,6 +26437,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1734033706 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5261800380946609320, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
+  m_PrefabInstance: {fileID: 270817707}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1734284277
 GameObject:
   m_ObjectHideFlags: 0
@@ -26509,6 +26562,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1741385933 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5261800378948513227, guid: 38f427c32dca7c14fab55f526a4af273, type: 3}
+  m_PrefabInstance: {fileID: 270817707}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1741385940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741385933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ab54ecc76918d418eb33607d0a2ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 3
+  moveSpeed: 1
+  startingPoint: 0
+  animator: {fileID: 0}
+  playerTarget: {fileID: 0}
+  colliderAttack: {fileID: 787739437}
+  colliderCheckAttack: {fileID: 1734033706}
+  boxCollider2D: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  materialSprite:
+  - {fileID: 2100000, guid: 5e885847a9be7104c82ce2dc3d65bc65, type: 2}
+  - {fileID: 2100000, guid: 4a88636f325cc6e4cb4758c3feee89a7, type: 2}
+  pointsToMove:
+  - {fileID: 1362760638}
+  - {fileID: 898605006}
+  - {fileID: 765235131}
 --- !u!1 &1744018606
 GameObject:
   m_ObjectHideFlags: 0
