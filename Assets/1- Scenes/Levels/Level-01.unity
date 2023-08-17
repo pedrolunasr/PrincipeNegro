@@ -15187,7 +15187,7 @@ GameObject:
   - component: {fileID: 488210616}
   - component: {fileID: 488210615}
   m_Layer: 0
-  m_Name: CheckPoint_Fase_2_Pier (1)
+  m_Name: CheckPoint_Fase_1_Instrucoes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
