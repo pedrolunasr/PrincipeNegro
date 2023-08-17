@@ -433,9 +433,9 @@ public class PlayerMovement2D : MonoBehaviour
     public void PauseHistory()
     {
 
-        //Time.timeScale = 0f;
-        //pauseHistory.SetActive(true);
-        //historyActive = true;
+        Time.timeScale = 0f;
+        pauseHistory.SetActive(true);
+        historyActive = true;
 
     }
 
