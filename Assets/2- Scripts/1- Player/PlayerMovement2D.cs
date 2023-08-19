@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -70,6 +71,11 @@ public class PlayerMovement2D : MonoBehaviour
 
     public ParticleSystem dust;
 
+    private Vector2 rayOrigin; // Posição do início do raio (pés)
+    private Vector2 rayDirection; // Direção do raio (para baixo)
+    private float rayDistance = 0.5f; // Distância do raio (ajuste conforme necessário)
+    private Vector2 surfaceNormal;
+    private float slopeAngle;
 
 
     private void Awake()
@@ -145,6 +151,25 @@ public class PlayerMovement2D : MonoBehaviour
         //Reconhecer o ch�o
         isGrounded = Physics2D.OverlapCapsule(feetPosition.position, sizeCapsule, CapsuleDirection2D.Horizontal, angleCapsule, whatIsGround);
 
+        rayOrigin = feetPosition.position; // Posição do início do raio (pés)
+        rayDirection = Vector2.down; // Direção do raio (para baixo)
+        rayDistance = 0.5f; // Distância do raio (ajuste conforme necessário)
+
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rayDirection, rayDistance, whatIsGround);
+
+        if (hit.collider != null)
+        {
+            surfaceNormal = hit.normal;
+            slopeAngle = Vector2.Angle(Vector2.up, surfaceNormal);
+
+            if (surfaceNormal.x > 0)
+            {
+                slopeAngle = -slopeAngle;
+            }
+
+        }
+
+
         if (blockInput == false)
         {
 
@@ -215,7 +240,7 @@ public class PlayerMovement2D : MonoBehaviour
             //Inveter posi��o do personagem
             if (move < 0)
             {
-                sprite.flipX = true;
+                 sprite.flipX = true;
                 
             }
             else if (move > 0)
@@ -312,6 +337,27 @@ public class PlayerMovement2D : MonoBehaviour
         {
             //Movimenta��o do personagem
             rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
+            GameObject playerBody = GameObject.Find("Body");
+            BoxCollider2D boxColliderPlayerBody = playerBody.GetComponent<BoxCollider2D>();
+
+            if( playerBody != null && boxColliderPlayerBody != null )
+            {
+                if (slopeAngle > 0 )
+                {
+                    boxColliderPlayerBody.sharedMaterial.friction = 100f;
+                }
+                else
+                {
+                    boxColliderPlayerBody.sharedMaterial.friction = 0f;
+                }
+
+                if ( jumping )
+                {
+                    boxColliderPlayerBody.sharedMaterial.friction = 0f;
+                }
+            }
+            
+            
         }
         else
         {
@@ -326,19 +372,59 @@ public class PlayerMovement2D : MonoBehaviour
 
             KBCounter -= Time.deltaTime;
         }
-
+            
 
         //Pulo do personagem
         if (jumping)
         {
-            rb.velocity = Vector2.up * jumpSpeed;
-            CreateDust();
 
-            //rb.AddForce(new Vector2(0f, jumpSpeed), ForceMode2D.Impulse);
+            float jumpAngleRadians = slopeAngle;
+            float jumpSpeedX = Vector2.up.x * jumpSpeed;
+            float jumpSpeedY = Vector2.up.y * jumpSpeed;
+
+            // Calcular as componentes horizontal e vertical da velocidade
+            if (move > 0)
+            {
+                jumpSpeedX += Mathf.Cos(jumpAngleRadians);
+                jumpSpeedY += Mathf.Sin(jumpAngleRadians);
+           
+            }
+            else if ( move < 0)
+            {
+                jumpSpeedX -= Mathf.Cos(jumpAngleRadians);
+                jumpSpeedY -= Mathf.Sin(jumpAngleRadians);
+               
+            }
+           
+
+            // Definir a velocidade do pulo
+            Vector2 jumpVelocity = new Vector2(jumpSpeedX, jumpSpeedY);
+            rb.velocity = jumpVelocity;
+
 
             //Desativar o pulo
             jumping = false;
+
+
         }
+
+        if (move > 0 && jumping)
+        {
+            rb.SetRotation(slopeAngle);
+        }
+        else if (move < 0 && jumping)
+        {
+            rb.SetRotation(slopeAngle * move);
+        }
+        else if (move == 0 && jumping)
+        {
+            rb.SetRotation(0);
+        }
+        else
+        {
+            rb.SetRotation(0);
+        }
+
     }
 
     public void PlayerDead()
