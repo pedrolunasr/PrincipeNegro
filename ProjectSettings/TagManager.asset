@@ -14,6 +14,7 @@ TagManager:
   - Ball
   - Health
   - GM
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - Enemy
   - TriggerPlayer
   - Health
-  - 
+  - Boss
   - 
   - 
   - 

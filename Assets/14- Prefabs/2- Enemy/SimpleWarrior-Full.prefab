@@ -318,7 +318,6 @@ GameObject:
   - component: {fileID: 5261800380703972545}
   - component: {fileID: 5261800380703972546}
   - component: {fileID: 7753147961524277718}
-  - component: {fileID: 7753147961524277713}
   m_Layer: 0
   m_Name: Attack
   m_TagString: Damage01
@@ -399,29 +398,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 0}
---- !u!114 &7753147961524277713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5261800380703972544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a46263d5afcfad4b975e6f10a0e84c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  anim: {fileID: 0}
-  sprite: {fileID: 0}
-  materialSprite: []
-  life: 3
-  moveSpeed: 1
-  pointsToMove: []
-  startingPoint: 0
-  colliderAtk: {fileID: 0}
-  colliderCheckAtk: {fileID: 0}
-  bc2d: {fileID: 0}
 --- !u!1 &5261800380879333910
 GameObject:
   m_ObjectHideFlags: 0
