@@ -13,6 +13,8 @@ public class PlayerLife : MonoBehaviour
 
     public GameObject ImpactEffect;
 
+    public int valueGold = 1;
+
     void Start()
     {
         hControl = HUDControl.hControl;
@@ -70,13 +72,21 @@ public class PlayerLife : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
+
+
+        //ganhar moeda
+        if (collision.gameObject.tag == "Coin")
+        {
+                hControl.MoreGold(valueGold);
+                Destroy(collision.gameObject);
+        }
     }
 
     private void ImpactEffectDamagePlayer()
     {
 
         Instantiate(ImpactEffect, transform.position, Quaternion.identity);
-        Destroy(ImpactEffect);
+        //Destroy(ImpactEffect);
 
     }
 

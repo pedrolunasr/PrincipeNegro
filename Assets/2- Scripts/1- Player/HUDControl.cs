@@ -15,10 +15,21 @@ public class HUDControl : MonoBehaviour
     public int life = 3;
     public GameObject[] heartHUD = new GameObject[3];
 
+    //Gold do personagem
+    private static string ammountGoldPrefs = "ammountGoldPrefs";
+    private int ammountGold;
+
+    public Text goldText;
+    //public Text goldTextLevelComplet;
+    public int gold;
+
 
     void Start()
     {
         pMove = PlayerMovement2D.pMove;
+
+        ammountGold = PlayerPrefs.GetInt(ammountGoldPrefs); //Pegar config salvas da quantidade total de ouro
+        MoreGold(ammountGold); //atualizar informaçoes de gold na HUD
     }
 
     private void Awake()
@@ -78,6 +89,14 @@ public class HUDControl : MonoBehaviour
         return life;
     }
 
+    public void MoreGold(int value)
+    {
+        gold = gold + value;
+        PlayerPrefs.SetInt(ammountGoldPrefs, gold);
+
+        LifeHud();
+    }
+
 
     //Aqui � a troca de imagme da HUD dependendo da quantidade de vida do player
     public void LifeHud()
@@ -122,6 +141,10 @@ public class HUDControl : MonoBehaviour
                 break;
 
         }
+
+        //atualizar quantidad de dinheiro na HUD e jogo completo
+        goldText.text = gold.ToString();
+        //goldTextLevelComplet.text = gold.ToString();
     }
 
 
