@@ -32076,7 +32076,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Ao cair pode morrer.
+  m_Text: "Ao cair, \xE9 poss\xEDvel morrer."
 --- !u!222 &718929478
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -40120,7 +40120,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Cuidado essa paria deve ser mortal.
+  m_Text: Cuidado, essa praia pode ser mortal.
 --- !u!222 &1122314921
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -64231,7 +64231,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Derrote o principe, e seja o rei.
+  m_Text: "Derrote o pr\xEDncipe e torne-se o rei."
 --- !u!222 &1538926316
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -95613,7 +95613,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Ao derrotar inimigos itens devem ser recebidos, vida ou moedas.
+  m_Text: Ao derrotar inimigos, itens, vida ou moedas devem ser recebidos.
 --- !u!222 &1876238693
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -97098,10 +97098,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Esta colina tem muitos perigos, passe por ela para chegar a vilda do Principe
-    negro.
-
-'
+  m_Text: "Esta colina apresenta muitos perigos. Voc\xEA precisar\xE1 atravess\xE1-la
+    para chegar \xE0 vila do Pr\xEDncipe Negro."
 --- !u!222 &1951036205
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -144057,7 +144055,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: A cidade se fica logo a frente.
+  m_Text: "A cidade fica logo \xE0 frente."
 --- !u!222 &2124867784
 CanvasRenderer:
   m_ObjectHideFlags: 0
