@@ -7,6 +7,7 @@ using UnityEngine;
 public class SimpleWarriorAttack : MonoBehaviour
 {
     public GameObject player;
+    public GameObject activeItem;
 
     public Animator anim;
     public SpriteRenderer sprite;
@@ -151,7 +152,6 @@ public class SimpleWarriorAttack : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-
     }
 
     private void EnemyDead()
@@ -161,6 +161,7 @@ public class SimpleWarriorAttack : MonoBehaviour
         life = 0;
         sprite.material = materialSprite[1];
         moveSpeed = 0;
+        activeItem.SetActive(true);
         Destroy(transform.gameObject.GetComponent<BoxCollider2D>());
         Destroy(transform.gameObject.GetComponent<Rigidbody2D>());
         Destroy(colliderAtk);

@@ -17,13 +17,14 @@ public class BanditMelee : MonoBehaviour
     public BoxCollider2D colliderAtk;
     public BoxCollider2D colliderCheckAtk;
 
+    public GameObject playerTarget;
     public GameObject activeItem;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-
+        playerTarget = GameObject.Find("Player");
         transform.position = pointsToMove[startingPoint].transform.position;
     }
 
@@ -55,31 +56,56 @@ public class BanditMelee : MonoBehaviour
 
     private void Move()
     {
-        transform.position = Vector2.MoveTowards(transform.position, pointsToMove[startingPoint].transform.position, moveSpeed * Time.deltaTime);
+        float DistanceToStartPoint = Vector3.Distance(playerTarget.transform.position, pointsToMove[0].transform.position);
+        float DistanceToEndPoint = Vector3.Distance(playerTarget.transform.position, pointsToMove[1].transform.position);
+        float DistanceBetweenPoints = Vector3.Distance(pointsToMove[0].transform.position, pointsToMove[1].transform.position);
+        bool canMoveToRigth = DistanceToStartPoint < DistanceBetweenPoints;
+        bool canMoveToLeft  = DistanceToEndPoint < DistanceBetweenPoints;
+        bool atStartPoin = Vector3.Distance(transform.position, pointsToMove[0].transform.position) <= 1;
+        bool atEndPoin = Vector3.Distance(transform.position, pointsToMove[1].transform.position) <= 1;
 
-        if(BanditMeleeCheckAttack.checkAttack == true)
-        {
-            StartCoroutine("Attack");
-        }
+        moveSpeed = 1f;
 
-        if (transform.position == pointsToMove[startingPoint].transform.position)
+        if( ( canMoveToRigth || canMoveToLeft ) && ( !( atStartPoin && atEndPoin ) ) )
         {
-            startingPoint += 1;
-        }
 
-        if(startingPoint == pointsToMove.Length)
-        {
-            startingPoint = 0;
-        }
+            if(canMoveToRigth) startingPoint = 0;
+            if(canMoveToLeft) startingPoint = 1;
 
-        if(moveSpeed != 0)
-        {
-            anim.SetBool("Walking", true);
+            transform.position = Vector2.MoveTowards(transform.position, pointsToMove[startingPoint].transform.position, moveSpeed * Time.deltaTime);
+
+            if (BanditMeleeCheckAttack.checkAttack == true)
+            {
+                StartCoroutine("Attack");
+            }
+
+            if (transform.position == pointsToMove[startingPoint].transform.position)
+            {
+                startingPoint += 1;
+            }
+
+            if (startingPoint == pointsToMove.Length)
+            {
+                startingPoint = 0;
+            }
+
+            if (moveSpeed > 0)
+            {
+                anim.SetBool("Walking", true);
+            }
+            else
+            {
+                anim.SetBool("Walking", false);
+            }
+
         }
         else
         {
+
             anim.SetBool("Walking", false);
+
         }
+
     }
 
     private void EnemyDead()

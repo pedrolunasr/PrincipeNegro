@@ -12,6 +12,7 @@ namespace Platformer.Mechanics
 
     public class SimpleWarriorController : MonoBehaviour
     {
+
         
         public int life = 3;
         public float moveSpeed = 1f;
@@ -20,6 +21,7 @@ namespace Platformer.Mechanics
         public AudioClip ouch;
         public Animator animator;
         public GameObject playerTarget;
+        public GameObject activeItem;
         public BoxCollider2D colliderAttack;
         public BoxCollider2D colliderCheckAttack;
         public BoxCollider2D boxCollider2D;
@@ -31,6 +33,8 @@ namespace Platformer.Mechanics
         private HUDControl helfControl;
 
         internal AudioSource _audio;
+
+        
 
 
         void Start()
@@ -246,6 +250,7 @@ namespace Platformer.Mechanics
 
             yield return new WaitForSeconds(0.5f);
 
+            activeItem.SetActive(true);
 
         }
 
