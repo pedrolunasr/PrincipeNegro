@@ -48,7 +48,10 @@ public class PlayerMovement2D : MonoBehaviour
     public GameObject deathPanel;
 
     [Header("Pause System")]
-    public GameObject pauseHistory;
+    public GameObject[] pauseHistory;
+
+
+    public GameObject[] checkPoints;
 
 
     float contadorDeath; //tempo ate mostrar tela de morte
@@ -519,9 +522,21 @@ public class PlayerMovement2D : MonoBehaviour
     public void PauseHistory()
     {
 
-        Time.timeScale = 0f;
-        pauseHistory.SetActive(true);
-        historyActive = true;
+        float DistanceToChekPoint01 = 0;
+        
+        for(int i = 0; i < 7; i++)
+        {
+            DistanceToChekPoint01 = Vector3.Distance(transform.position, checkPoints[i].transform.position);
+
+            if (DistanceToChekPoint01 <= 4f)
+            {
+                Time.timeScale = 0f;
+                pauseHistory[i].SetActive(true);
+                historyActive = true;
+                break;
+            }
+        }
+
 
     }
 

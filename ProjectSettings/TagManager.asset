@@ -16,6 +16,7 @@ TagManager:
   - GM
   - Ground
   - Coin
+  - CheckPoint_Fase_2_Pier
   layers:
   - Default
   - TransparentFX
