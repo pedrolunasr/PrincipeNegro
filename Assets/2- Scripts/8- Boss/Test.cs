@@ -108,6 +108,8 @@ public class Test : MonoBehaviour
         else
         {
             anim.SetBool("Walking", true);
+            GameObject.Find("BossAarea").GetComponent<BoxCollider2D>().enabled = true;
+
         }
 
         if (TestCheckAttack.checkAttack == true)
