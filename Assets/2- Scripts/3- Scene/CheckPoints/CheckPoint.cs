@@ -28,7 +28,13 @@ public class CheckPoint : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            gm.lastCheckPointPos = transform.position;
+            //history
+
+            if( ! ( this.tag == "history" ) )
+            {
+                gm.lastCheckPointPos = transform.position;
+            }
+
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             pMove.PauseHistory();
             Destroy(bc2d);
