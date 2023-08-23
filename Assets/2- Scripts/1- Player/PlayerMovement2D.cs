@@ -352,12 +352,13 @@ public class PlayerMovement2D : MonoBehaviour
             rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
             GameObject playerBody = GameObject.Find("Body");
             BoxCollider2D boxColliderPlayerBody = playerBody.GetComponent<BoxCollider2D>();
+            boxColliderPlayerBody.sharedMaterial.friction = 0f;
 
-            if( playerBody != null && boxColliderPlayerBody != null )
+            if ( playerBody != null && boxColliderPlayerBody != null )
             {
-                if (slopeAngle > 0 )
+                if (slopeAngle != 0 )
                 {
-                    boxColliderPlayerBody.sharedMaterial.friction = 100f;
+                    boxColliderPlayerBody.sharedMaterial.friction = 1f;
                 }
                 else
                 {
