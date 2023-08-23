@@ -53,6 +53,13 @@ public class PlayerMovement2D : MonoBehaviour
 
     public GameObject[] checkPoints;
 
+    public AudioClip attackSoundFx;
+    public AudioClip jumpSoundFx;
+    public AudioClip walkSoundFx;
+    public AudioClip hitSoundFx;
+    public AudioClip getItemSoundFx;
+
+
 
     float contadorDeath; //tempo ate mostrar tela de morte
 
@@ -187,6 +194,7 @@ public class PlayerMovement2D : MonoBehaviour
                 {
                     moveSpeed = 3.0f;
                 }
+
             }
             else
             {
@@ -197,18 +205,18 @@ public class PlayerMovement2D : MonoBehaviour
             if (Input.GetButtonDown("Jump") && ghostJump > 0)
             {
                 jumping = true;
+                this.playSound(jumpSoundFx);
             }
 
             //Input do ataque do personagem3
 
             // ataque duplo
             //if (Input.GetButtonDown("Fire3") && lockAtk == false)
-            if (Input.GetButtonDown("Fire3"))
-
-                {
+            if (Input.GetButtonDown("Fire3")) 
+            {
 
                 attackingBool = true;
-
+                
                 if (isGrounded)
                 {
                     animationPlayer.SetBool("SingleAttackGround", true);
@@ -224,6 +232,7 @@ public class PlayerMovement2D : MonoBehaviour
                     animationPlayer.SetBool("DoubleAttack", false);
                 }
 
+                this.playSound(attackSoundFx);
                 /*   //ataque duplo
                 if (doubleAtk == true)
                 {
@@ -264,6 +273,7 @@ public class PlayerMovement2D : MonoBehaviour
                 if (rb.velocity.x != 0 && move != 0)
                 {
                     animationPlayer.SetBool("Walking", true);
+                    this.playSound(walkSoundFx);
                 }
                 else
                 {
@@ -475,7 +485,7 @@ public class PlayerMovement2D : MonoBehaviour
     //Personagem levando dano
     public IEnumerator DamagePlayer()
     {
-
+        
         PlayerLife.bc.enabled = false;
         animationPlayer.SetBool("Damage", true);
         animationPlayer.SetBool("SingleAttackGround", false);
@@ -495,6 +505,7 @@ public class PlayerMovement2D : MonoBehaviour
         }
             
         PlayerLife.bc.enabled = true;
+        
     }
 
     void PauseScreen()
@@ -565,6 +576,19 @@ public class PlayerMovement2D : MonoBehaviour
     void CreateDust()
     {
         dust.Play();
+    }
+
+    public void playSound( AudioClip sound )
+    {
+
+        AudioSource aPlayerSoud = GameObject.Find("SoundFx").GetComponent<AudioSource>();
+        aPlayerSoud.clip = sound;
+
+        if ( ! aPlayerSoud.isPlaying)
+        {
+            aPlayerSoud.Play();
+        }
+        
     }
 
 }
