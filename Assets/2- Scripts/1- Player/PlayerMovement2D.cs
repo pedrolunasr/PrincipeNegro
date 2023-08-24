@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
+using UnityEditor.ShaderGraph;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.U2D.IK;
@@ -87,6 +88,8 @@ public class PlayerMovement2D : MonoBehaviour
     private Vector2 surfaceNormal;
     private float slopeAngle;
 
+    private HUDControl hControl;
+
 
     private void Awake()
     {
@@ -109,6 +112,9 @@ public class PlayerMovement2D : MonoBehaviour
         //Cursor.lockState = CursorLockMode.Locked;
         //Cursor.visible = false;
 
+
+        hControl = GameObject.Find("Canvas").GetComponent<HUDControl>();
+
         AnimDamage = GetComponentInChildren<Animator>();
 
         Time.timeScale = 1f;
@@ -125,6 +131,7 @@ public class PlayerMovement2D : MonoBehaviour
         //Referente ao mecanismo de checkpoint e GameMaster
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         transform.position = gm.lastCheckPointPos;
+        hControl.MoreGold(gm.GoldAtCheckPoint);
 
         history = CheckPoint.history;
 
@@ -455,7 +462,7 @@ public class PlayerMovement2D : MonoBehaviour
 
         moveSpeed = 0;
 
-        PlayerLife.bc.enabled = false;
+        PlayerLifeAndGold.bc.enabled = false;
 
         //deixar por enquanto
         Destroy(transform.gameObject.GetComponent<BoxCollider2D>());
@@ -487,7 +494,7 @@ public class PlayerMovement2D : MonoBehaviour
     public IEnumerator DamagePlayer()
     {
         
-        PlayerLife.bc.enabled = false;
+        PlayerLifeAndGold.bc.enabled = false;
         animationPlayer.SetBool("Damage", true);
         animationPlayer.SetBool("SingleAttackGround", false);
         animationPlayer.SetBool("AttackJump", false);
@@ -505,7 +512,7 @@ public class PlayerMovement2D : MonoBehaviour
             yield return new WaitForSeconds(0.15f);
         }
             
-        PlayerLife.bc.enabled = true;
+        PlayerLifeAndGold.bc.enabled = true;
         
     }
 
@@ -571,7 +578,7 @@ public class PlayerMovement2D : MonoBehaviour
         blockInput = false;
         moveSpeed = 3.0f;
 
-        PlayerLife.bc.enabled = true;
+        PlayerLifeAndGold.bc.enabled = true;
     }
 
     void CreateDust()

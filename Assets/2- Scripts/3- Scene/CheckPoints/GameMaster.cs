@@ -6,8 +6,9 @@ using UnityEngine.Experimental.Rendering;
 public class GameMaster : MonoBehaviour
 {
 
-    private static GameMaster instance;
+    public static GameMaster instance { get; private set; }
     public Vector2 lastCheckPointPos;
+    public int GoldAtCheckPoint;
 
     void Awake()
     {
@@ -15,6 +16,7 @@ public class GameMaster : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(instance);
+
         }
         else
         {

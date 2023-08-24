@@ -5,18 +5,36 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
+    
+    PlayerLifeAndGold pItens;
+    GameMaster gameMaster;
+
+
+    public void Start()
+    {
+        pItens = GameObject.Find("Body").GetComponentInChildren<PlayerLifeAndGold>();
+        gameMaster = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+    }
 
     public void Intro()
     {
         MusicManager.mManager.PlaySound(0);
+        gameMaster.lastCheckPointPos.y = 3;
+        gameMaster.lastCheckPointPos.x = -29;
+        gameMaster.GoldAtCheckPoint = 0;
         SceneManager.LoadScene("Menu");
-        
+
+
     }
 
     public void MenuScene()
     {
+        gameMaster.lastCheckPointPos.y = 3;
+        gameMaster.lastCheckPointPos.x = -29;
+        gameMaster.GoldAtCheckPoint = 0;
         SceneManager.LoadScene("Menu");
         MusicManager.mManager.PlaySound(1);
+        
     }
 
     public void Credits()
@@ -58,13 +76,17 @@ public class LoadScene : MonoBehaviour
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //chama o checkpoint
+
     }
 
     public void ExitGame()
     {
+        gameMaster.lastCheckPointPos.y = 3;
+        gameMaster.lastCheckPointPos.x = -29;
+        gameMaster.GoldAtCheckPoint = 0;
         SceneManager.LoadScene("Menu");
         MusicManager.mManager.PlaySound(1);
-        
+
     }
 
 
@@ -72,9 +94,11 @@ public class LoadScene : MonoBehaviour
 
     public void Level01()
     {
+
+
         SceneManager.LoadScene("Level-01");
         MusicManager.mManager.PlaySound(2);
-        
+
     }
 
 

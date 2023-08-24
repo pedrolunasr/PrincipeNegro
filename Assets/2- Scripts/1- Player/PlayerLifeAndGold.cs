@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
 
-public class PlayerLife : MonoBehaviour
+public class PlayerLifeAndGold : MonoBehaviour
 {
-
-    HUDControl hControl;
+    public static PlayerLifeAndGold pItens { get; private set; }
+    
+    public HUDControl hControl;
     PlayerMovement2D pMove;
 
     public static BoxCollider2D bc;
@@ -90,6 +91,15 @@ public class PlayerLife : MonoBehaviour
 
     }
 
+    public void initGold()
+    {
+        hControl.ResetGold();
+    }
+
+    public void restoreGoldValue()
+    {
+        hControl.ResetoreGoldStock();
+    }
 
     /*
     void ManageCollision( GameObject coll )

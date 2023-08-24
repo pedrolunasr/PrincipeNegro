@@ -16,11 +16,14 @@ public class CheckPoint : MonoBehaviour
 
     PlayerMovement2D pMove;
 
+    private PlayerLifeAndGold pItens;
+
     void Start()
     {
         pMove = PlayerMovement2D.pMove;
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         bc2d = GetComponent<BoxCollider2D>();
+        pItens = GameObject.Find("Body").GetComponentInChildren<PlayerLifeAndGold>();            
 
     }
 
@@ -33,6 +36,7 @@ public class CheckPoint : MonoBehaviour
             if( ! ( this.tag == "history" ) )
             {
                 gm.lastCheckPointPos = transform.position;
+                gm.GoldAtCheckPoint = pItens.hControl.gold;
             }
 
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
