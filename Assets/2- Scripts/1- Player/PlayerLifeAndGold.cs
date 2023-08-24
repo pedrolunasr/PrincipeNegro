@@ -37,7 +37,7 @@ public class PlayerLifeAndGold : MonoBehaviour
                 StartCoroutine(pMove.DamagePlayer());
 
             }
-            else if(hControl.life <= 0)
+            else if (hControl.life <= 0)
             {
                 Destroy(this);
             }
@@ -47,10 +47,10 @@ public class PlayerLifeAndGold : MonoBehaviour
 
 
         }
-        
+
         if (collision.gameObject.tag == "instaKill")
         {
-            
+
             hControl.instaKill();
             bc.enabled = true;
 
@@ -67,7 +67,7 @@ public class PlayerLifeAndGold : MonoBehaviour
         //ganhar vida
         if (collision.gameObject.tag == "Health")
         {
-            if(hControl.life < 3)
+            if (hControl.life < 3)
             {
                 hControl.MoreLife();
                 Destroy(collision.gameObject);
@@ -78,12 +78,19 @@ public class PlayerLifeAndGold : MonoBehaviour
         //ganhar moeda
         if (collision.gameObject.tag == "Coin")
         {
-                hControl.MoreGold(valueGold);
-                Destroy(collision.gameObject);
+            hControl.MoreGold(valueGold);
+            Destroy(collision.gameObject);
+        }
+
+        //perder todas as moedas
+        if (collision.gameObject.tag == "Zerar")
+        {
+            hControl.LessGold();
+            Destroy(collision.gameObject);
         }
     }
 
-    private void ImpactEffectDamagePlayer()
+private void ImpactEffectDamagePlayer()
     {
 
         Instantiate(ImpactEffect, transform.position, Quaternion.identity);
@@ -96,10 +103,10 @@ public class PlayerLifeAndGold : MonoBehaviour
         hControl.ResetGold();
     }
 
-    public void restoreGoldValue()
+    /*public void restoreGoldValue()
     {
         hControl.ResetoreGoldStock();
-    }
+    }*/
 
     /*
     void ManageCollision( GameObject coll )

@@ -8,12 +8,14 @@ public class LoadScene : MonoBehaviour
     
     PlayerLifeAndGold pItens;
     GameMaster gameMaster;
+    public HUDControl hControl;
 
 
     public void Start()
     {
         pItens = GameObject.Find("Body").GetComponentInChildren<PlayerLifeAndGold>();
         gameMaster = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+        hControl = HUDControl.hControl;
     }
 
     public void Intro()
@@ -100,6 +102,7 @@ public class LoadScene : MonoBehaviour
 
 
         SceneManager.LoadScene("Level-01");
+        hControl.ResetarGold();
         MusicManager.mManager.PlaySound(2);
 
     }
