@@ -79,6 +79,7 @@ public class PlayerLifeAndGold : MonoBehaviour
         if (collision.gameObject.tag == "Coin")
         {
             hControl.MoreGold(valueGold);
+            pMove.getItemPlaySound();
             Destroy(collision.gameObject);
         }
 

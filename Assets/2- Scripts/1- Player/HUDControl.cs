@@ -95,7 +95,7 @@ public class HUDControl : MonoBehaviour
 
     public void MoreGold(int value)
     {
-        pMove.getItemPlaySound();
+        
         gold = gold + value;
         PlayerPrefs.SetInt(ammountGoldPrefs, gold);
         LifeHud();
