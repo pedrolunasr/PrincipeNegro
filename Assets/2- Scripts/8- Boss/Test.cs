@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
+    public static Test test { get; private set; }
+
     public GameObject player;
 
     public Animator anim;
@@ -21,6 +23,9 @@ public class Test : MonoBehaviour
     public BoxCollider2D colliderAtk3;
     public BoxCollider2D colliderCheckAtk;
 
+    PlayerMovement2D pMove;
+
+
     public int randomAttack;
 
 
@@ -28,11 +33,13 @@ public class Test : MonoBehaviour
     {
         player = GameObject.Find("Player");
 
+
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
 
         transform.position = pointsToMove[2].transform.position;
 
+        pMove = PlayerMovement2D.pMove;
     }
 
     void Update()
@@ -157,6 +164,11 @@ public class Test : MonoBehaviour
 
     }
 
+    public void EndGame()
+    {
+        pMove.PauseEndGame();
+    }
+
     private void EnemyDead()
     {
         life = 0;
@@ -167,8 +179,9 @@ public class Test : MonoBehaviour
         Destroy(transform.gameObject.GetComponent<Rigidbody2D>());
         Destroy(colliderAtk);
         Destroy(colliderCheckAtk);
-        Destroy(this);
+        //Destroy(this);
     }
+
 
     IEnumerator Attack()
     {

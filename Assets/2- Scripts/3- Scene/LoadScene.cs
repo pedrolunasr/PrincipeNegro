@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
-    
+
     PlayerLifeAndGold pItens;
     GameMaster gameMaster;
     public HUDControl hControl;
+    
 
 
     public void Start()
@@ -16,6 +17,7 @@ public class LoadScene : MonoBehaviour
         pItens = GameObject.Find("Body").GetComponentInChildren<PlayerLifeAndGold>();
         gameMaster = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         hControl = HUDControl.hControl;
+        
     }
 
     public void Intro()

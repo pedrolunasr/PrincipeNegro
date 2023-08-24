@@ -52,6 +52,10 @@ public class PlayerMovement2D : MonoBehaviour
     public GameObject[] pauseHistory;
 
 
+    [Header("Pause System")]
+    public GameObject pauseEndGame;
+
+
     public GameObject[] checkPoints;
 
     public AudioClip attackSoundFx;
@@ -60,6 +64,7 @@ public class PlayerMovement2D : MonoBehaviour
     public AudioClip hitSoundFx;
     public AudioClip getItemSoundFx;
 
+    public Test test;
 
 
     float contadorDeath; //tempo ate mostrar tela de morte
@@ -112,6 +117,8 @@ public class PlayerMovement2D : MonoBehaviour
         //Cursor.lockState = CursorLockMode.Locked;
         //Cursor.visible = false;
 
+        test = Test.test;
+
 
         hControl = GameObject.Find("Canvas").GetComponent<HUDControl>();
 
@@ -162,6 +169,7 @@ public class PlayerMovement2D : MonoBehaviour
             }
 
         }
+
 
 
 
@@ -536,6 +544,16 @@ public class PlayerMovement2D : MonoBehaviour
             //Cursor.lockState = CursorLockMode.None;
             //Cursor.visible = true;
         }
+    }
+
+    public void PauseEndGame()
+    {
+
+            Time.timeScale = 0f;
+            pauseEndGame.SetActive(true);
+            isPaused = true;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
 
     public void PauseHistory()
