@@ -589,14 +589,46 @@ public class PlayerMovement2D : MonoBehaviour
     public void playSound( AudioClip sound )
     {
 
-        AudioSource aPlayerSoud = GameObject.Find("SoundFx").GetComponent<AudioSource>();
-        aPlayerSoud.clip = sound;
+        AudioSource aSoudFx = GameObject.Find("SoundFx").GetComponent<AudioSource>();
+        aSoudFx.clip = sound;
 
-        if ( ! aPlayerSoud.isPlaying)
+        if ( ! aSoudFx.isPlaying)
         {
-            aPlayerSoud.Play();
+            aSoudFx.Play();
         }
         
     }
+
+    public void playSoundNow(AudioClip sound )
+    {
+
+        AudioSource aSoudFx = GameObject.Find("SoundFx").GetComponent<AudioSource>();
+
+        if (!aSoudFx.isPlaying)
+        {
+            aSoudFx.Stop();
+        }
+
+        aSoudFx.clip = sound;
+        aSoudFx.Play();
+
+    }
+
+    public void getItemPlaySound()
+    {
+
+        AudioSource aSoudFx = GameObject.Find("SoundFx").GetComponent<AudioSource>();
+        
+        if ( ! aSoudFx.isPlaying)
+        {
+            aSoudFx.Stop();
+        }
+
+        aSoudFx.clip = getItemSoundFx;
+        aSoudFx.Play();
+
+    }
+
+
 
 }

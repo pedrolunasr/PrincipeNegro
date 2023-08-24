@@ -47,7 +47,8 @@ public class HUDControl : MonoBehaviour
 
     public void LessLife()
     {
-        
+
+        pMove.playSoundNow(pMove.hitSoundFx);
         life--;
         if(life < 0)
         {
@@ -59,8 +60,8 @@ public class HUDControl : MonoBehaviour
     public void instaKill()
     {
         //life = 0;
-        
-        while(life > 0)
+        pMove.playSoundNow(pMove.hitSoundFx);
+        while (life > 0)
         {
             LessLife();
         }
@@ -77,6 +78,7 @@ public class HUDControl : MonoBehaviour
     {
         
         if( life < 3 ){
+            pMove.playSoundNow(pMove.getItemSoundFx);
             life++;
             LifeHud();
         }
@@ -90,10 +92,12 @@ public class HUDControl : MonoBehaviour
 
     public void MoreGold(int value)
     {
+        pMove.getItemPlaySound();
         gold = gold + value;
         PlayerPrefs.SetInt(ammountGoldPrefs, gold);
-
         LifeHud();
+
+        
     }
 
 
