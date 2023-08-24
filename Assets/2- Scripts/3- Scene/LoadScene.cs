@@ -19,22 +19,19 @@ public class LoadScene : MonoBehaviour
     public void Intro()
     {
         MusicManager.mManager.PlaySound(0);
-        gameMaster.lastCheckPointPos.y = 3;
-        gameMaster.lastCheckPointPos.x = -29;
-        gameMaster.GoldAtCheckPoint = 0;
         SceneManager.LoadScene("Menu");
+        toStartOfGame();
 
 
     }
 
     public void MenuScene()
     {
-        gameMaster.lastCheckPointPos.y = 3;
-        gameMaster.lastCheckPointPos.x = -29;
-        gameMaster.GoldAtCheckPoint = 0;
+        
         SceneManager.LoadScene("Menu");
         MusicManager.mManager.PlaySound(1);
-        
+        toStartOfGame();
+
     }
 
     public void Credits()
@@ -81,12 +78,18 @@ public class LoadScene : MonoBehaviour
 
     public void ExitGame()
     {
+        
+        SceneManager.LoadScene("Menu");
+        MusicManager.mManager.PlaySound(1);
+        toStartOfGame();
+
+    }
+
+    private void toStartOfGame()
+    {
         gameMaster.lastCheckPointPos.y = 3;
         gameMaster.lastCheckPointPos.x = -29;
         gameMaster.GoldAtCheckPoint = 0;
-        SceneManager.LoadScene("Menu");
-        MusicManager.mManager.PlaySound(1);
-
     }
 
 
