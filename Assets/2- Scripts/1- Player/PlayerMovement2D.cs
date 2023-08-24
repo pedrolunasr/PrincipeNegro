@@ -543,11 +543,11 @@ public class PlayerMovement2D : MonoBehaviour
 
         float DistanceToChekPoint01 = 0;
         
-        for(int i = 0; i < 7; i++)
+        for(int i = 0; i < checkPoints.Length; i++)
         {
             DistanceToChekPoint01 = Vector3.Distance(transform.position, checkPoints[i].transform.position);
 
-            if (DistanceToChekPoint01 <= 4f)
+            if (DistanceToChekPoint01 <= 10f)
             {
                 Time.timeScale = 0f;
                 pauseHistory[i].SetActive(true);
