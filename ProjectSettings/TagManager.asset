@@ -3,19 +3,33 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Damage01
+  - MoreLife01
+  - Attack
+  - sea
+  - Body
+  - instaKill
+  - KnockBack
+  - Ball
+  - Health
+  - GM
+  - Ground
+  - Coin
+  - history
+  - Zerar
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Ground
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - TriggerPlayer
+  - Health
+  - Boss
   - 
   - 
   - 
@@ -40,4 +54,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 3613208015
     locked: 0
